@@ -1,14 +1,13 @@
 import React from "react";
 import Navbar from "./Component/Navbar";
-import Home from "./Pages/Home";
-import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
+import RoutesContainer from "./Routes";
 
 export default function App() {
   return (
-    <Router>
+    <div style={{fontFamily: "Mina"}}>
       <Navbar>
-        <Home />
+        <RoutesContainer />
       </Navbar>
-    </Router>
+    </div>
   );
 }

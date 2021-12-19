@@ -1,0 +1,21 @@
+@import url('https://cdn.rawgit.com/sh4hids/bangla-web-fonts/lal-sabuj-normal/stylesheet.css');
+
+.BookTitle{
+    font-family: 'LalSabujNormal';
+}
+
+.ProductContainer{
+    box-shadow: inset 0 0 3px rgba(29, 191, 115, 0.2);
+    border-radius: 7px;
+}
+
+.ProductContainer:hover{
+    background-color: #f4f8f6;
+}
+
+.Shadow{
+    box-shadow: inset 0 0 3px rgba(29, 191, 115, 0.2);
+    border-radius: 7px;
+    padding: 3px  0;
+    margin: 2px auto;
+}
