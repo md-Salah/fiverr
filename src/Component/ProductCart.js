@@ -16,7 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import Slider from "infinite-react-carousel";
 
-export default function ProductCart() {
+export default function ProductCart(title) {
   return (
     <Box h="460px" bg="white">
       <Box px={{ base: "30px", lg: "60px", xl: "90px" }}>
@@ -28,8 +28,9 @@ export default function ProductCart() {
           fontSize={{ base: "lg", md: "30" }}
           textAlign={{ base: "center", md: "left" }}
           fontFamily={"Mina"}
+          letterSpacing={'wider'}
         >
-          Popular Now
+          {title.title}
         </Heading>
         <Flex
           bg="white"

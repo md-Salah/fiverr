@@ -8,21 +8,21 @@ export default function Home() {
   return (
     <Box h="100vh">
       <Banner />
-      <ProductCart />
+      <ProductCart title="Popular Books" />
       <Flex
         justifyContent={"center"}
         px={{ base: "30px", lg: "60px", xl: "90px" }}
       >
         <Divider orientation="horizontal" />
       </Flex>
-      <ProductCart />
+      <ProductCart title='English Original Print Books' />
       <Flex
         justifyContent={"center"}
         px={{ base: "30px", lg: "60px", xl: "90px" }}
       >
         <Divider orientation="horizontal" />
       </Flex>
-      <ProductCart />
+      <ProductCart title='Automatic Suggestion Based On Your Likes' />
     </Box>
   );
 }
