@@ -19,7 +19,8 @@ import Slider from "infinite-react-carousel";
 export default function ProductCart(title) {
   return (
     <Box h="460px" bg="white">
-      <Box px={{ base: "30px", lg: "60px", xl: "90px" }}>
+      <Box>
+        
         <Heading
           mb="20px"
           pt="25px"
@@ -28,14 +29,16 @@ export default function ProductCart(title) {
           fontSize={{ base: "lg", md: "30" }}
           textAlign={{ base: "center", md: "left" }}
           fontFamily={"Mina"}
-          letterSpacing={'wider'}
+          letterSpacing={"wider"}
         >
           {title.title}
         </Heading>
+
         <Flex
-          bg="white"
+          w="100%"
           h="100%"
-          justifyContent={{ base: "center", sm: "space-around" }}
+          bg='white'
+          justifyContent={{ base: "center", sm: "space-between" }}
         >
           <Box>
             <Product />
@@ -53,6 +56,7 @@ export default function ProductCart(title) {
             <Product />
           </Box>
         </Flex>
+
       </Box>
     </Box>
   );
@@ -64,14 +68,14 @@ function Product() {
       <Box
         h="340px"
         w="240px"
-        py='1'
-        px='20px'
+        py="1"
+        px="20px"
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
         className="ProductContainer"
       >
-        <Image mt='3px' mx="auto" w="auto" h="85%" src="../../Books/book.jpg" />
+        <Image mt="3px" mx="auto" w="auto" h="85%" src="../../Books/book.jpg" />
 
         <Text
           h="55px"

@@ -4,20 +4,14 @@ import PopoverData from "../Component/PopoverData";
 import BookDetailsTemplate from "../Component/BookDetailsTemplate";
 import ProductCart from "../Component/ProductCart";
 import "../Component/ProductCart.css";
+import Cart from "../Component/Cart";
 
 export default function CartAndCheckout() {
   return (
     <Box h="100vh" w="100%">
       <PopoverData />
-      <Box mx={{ base: "30px", lg: "60px", xl: "90px" }}>
-        <Box
-          border={"2px solid yellow"}
-          mt="40px"
-          p="19"
-          display={{ base: "div", md: "flex" }}
-          justifyContent={"space-between"}
-          alignContent={"center"}
-        ></Box>
+      <Box mx={{ base: "30px", lg: "60px", xl: "90px" }} mt="40px">
+        <Cart />
       </Box>
 
       <Box

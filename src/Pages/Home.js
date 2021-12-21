@@ -3,26 +3,35 @@ import { Box, Divider, Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import Search from "../Component/Search";
 import ProductCart from "../Component/ProductCart";
+import "../Component/ProductCart.css";
 
 export default function Home() {
   return (
     <Box h="100vh">
       <Banner />
-      <ProductCart title="Popular Books" />
-      <Flex
-        justifyContent={"center"}
-        px={{ base: "30px", lg: "60px", xl: "90px" }}
+      <Box
+        className="Shadow"
+        mt="50px"
+        mx={{ base: "30px", lg: "60px", xl: "90px" }}
       >
-        <Divider orientation="horizontal" />
-      </Flex>
-      <ProductCart title='English Original Print Books' />
-      <Flex
-        justifyContent={"center"}
-        px={{ base: "30px", lg: "60px", xl: "90px" }}
+        <ProductCart title="Popular Books" />
+      </Box>
+
+      <Box
+        className="Shadow"
+        mt="50px"
+        mx={{ base: "30px", lg: "60px", xl: "90px" }}
       >
-        <Divider orientation="horizontal" />
-      </Flex>
-      <ProductCart title='Automatic Suggestion Based On Your Likes' />
+        <ProductCart title="English Original Print Books" />
+      </Box>
+
+      <Box
+        className="Shadow"
+        mt="50px"
+        mx={{ base: "30px", lg: "60px", xl: "90px" }}
+      >
+        <ProductCart title="Suggestion Based On Your Likes" />
+      </Box>
     </Box>
   );
 }
@@ -44,10 +53,10 @@ function Banner() {
               lg: "30px",
               xl: "40px",
             }}
-            fontWeight={{ base:"bold", lg:'semibold' }}
+            fontWeight={{ base: "bold", lg: "semibold" }}
             pt={{ base: "30px", lg: "80px" }}
             textAlign={{ base: "center", sm: "left" }}
-            lineHeight='1.6'
+            lineHeight="1.6"
           >
             {mainTitle}
           </Text>
@@ -60,8 +69,8 @@ function Banner() {
               lg: "18px",
               xl: "20px",
             }}
-            pt={{ base: "3px", md:'1px', lg: "8px" }}
-            pb={{ base: "15px", md:'25px', lg: "40px" }}
+            pt={{ base: "3px", md: "1px", lg: "8px" }}
+            pb={{ base: "15px", md: "25px", lg: "40px" }}
             lineHeight={{ base: "30px", sm: "55px" }}
             textAlign={{ base: "center", sm: "left" }}
           >

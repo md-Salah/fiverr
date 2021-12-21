@@ -124,44 +124,46 @@ export default function BookDetailsTemplate() {
           alignContent={"center"}
         >
           <Flex
-            display={"flex"}
+            display="flex"
             flexDirection={{ base: "column-reverse", sm: "row" }}
             w={{ base: "initial", md: "30%" }}
           >
-            <Box className="Shadow" w={{ base: "100%", sm: "50px" }}>
-              <Box
-                variant={"simple"}
+            
+            <Box 
                 display="flex"
                 flexDirection={{ base: "row", sm: "column" }}
-                h="100%"
-                justifyContent={"center"}
-                alignItems={"center"}
+                justifyContent={{base:"center", sm:'space-between'}}
+                alignItems="center"
+                p={{base:'5px', sm:'5px'}}
               >
-                <Box p="1">
-                  <Image src={Info[0].img} />
+                <Box p="1" m='1' border="2px solid #888">
+                  <Image maxW={{base:'40px' ,sm:'55px'}} src={Info[0].img} />
                 </Box>
-                <Box p="1">
-                  <Image src={Info[0].img} />
+                <Box p="1" m='1' border="2px solid #ccc">
+                  <Image maxW={{base:'40px' ,sm:'55px'}} src={Info[0].img} />
                 </Box>
-                <Box p="1">
-                  <Image src={Info[0].img} />
+                <Box p="1" m='1' border="2px solid #ccc">
+                  <Image maxW={{base:'40px' ,sm:'55px'}} src={Info[0].img} />
                 </Box>
-                <Box p="1">
-                  <Image src={Info[0].img} />
+                <Box p="1" m='1' border="2px solid #ccc">
+                  <Image maxW={{base:'40px' ,sm:'55px'}} src={Info[0].img} />
                 </Box>
-                <Box p="1">
-                  <Image src={Info[0].img} />
+                <Box p="1" m='1' border="2px solid #ccc" display={{base:'none', sm:'initial'}} >
+                  <Image maxW={{base:'40px' ,sm:'55px'}} src={Info[0].img} />
                 </Box>
+
               </Box>
-            </Box>
+
             <Box
-              p={{ base: "10", xl: "10" }}
+              p='40px'
               className="Shadow"
               display={"flex"}
               justifyContent={"center"}
               alignContent={"center"}
+              bgImage={"url(../../frame.png)"}
             >
               <Image
+                className="Shadow"
                 w="initial"
                 maxH={"280"}
                 m="auto"
@@ -169,15 +171,17 @@ export default function BookDetailsTemplate() {
                 alt="Image"
               />
             </Box>
+
           </Flex>
 
           <Box
-            mt="5"
+            mt={{base:"5", md:'initial'}}
             w={{ base: "initial", md: "45%" }}
             ml={{ base: "initial", md: "10" }}
             display={"flex"}
+            className="Shadow"
           >
-            <Table variant={"simple"} m="5px" size={{ base: "sm", md: "lg" }}>
+            <Table variant={'unstyled'} m="5px" size={{ base: "sm", md: "lg" }}>
               <Thead>
                 <Tr>
                   <Th
