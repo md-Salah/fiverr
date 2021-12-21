@@ -57,7 +57,7 @@ export default function Navbar({ children }) {
               {NavbarText("Publisher", "/")}
               {NavbarText("Sign In", "/")}
 
-              <Link to="/Cart">
+              <Link to="/CheckOut">
                 <Flex
                   h="40px"
                   w="35px"
