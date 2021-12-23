@@ -21,7 +21,7 @@ export default function Search(props) {
       </Flex>
       <Button
         h="inherit"
-        bg="#1dbf73"
+        bg='#319795'
         color="white"
         borderLeftRadius={"0"}
         borderRightRadius={"5px"}

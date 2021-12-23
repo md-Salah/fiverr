@@ -9,10 +9,9 @@ import ShippingDetails from "../Component/ShippingDetails";
 
 export default function CartAndCheckout() {
   return (
-    <Box h="100vh" pt='90px'>
+    <Box h="100vh" pt={{base:'60px', md:'90px'}}>
       <Box mx={{ base: "30px", lg: "60px", xl: "90px" }} mt="40px">
         <Cart />
-        <ShippingDetails />
       </Box>
     </Box>
   );

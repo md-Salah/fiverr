@@ -1,4 +1,5 @@
 import React from "react";
+import ShippingDetails from "./ShippingDetails";
 import {
   Box,
   Flex,
@@ -228,10 +229,10 @@ export default function Cart() {
             </Checkbox>
           </Box>
           <Box>
-            <Text fontSize="lg" textAlign="right" fontWeight='bold' >
+            <Text fontSize="lg" textAlign="right" fontWeight="bold">
               Payable {196} Tk
             </Text>
-            <Text fontSize="sm" textAlign="right" color='whiteAlpha.800' >
+            <Text fontSize="sm" textAlign="right" color="whiteAlpha.800">
               You Save Total {100} Tk
             </Text>
           </Box>
@@ -272,6 +273,7 @@ export default function Cart() {
               <Td colSpan="2">
                 <Flex mx="auto">
                   <Input
+                    bg="white"
                     w={{ base: "70%", "2xl": "75%" }}
                     type="text"
                     placeholder="Have a Promo Code?"
@@ -302,6 +304,7 @@ export default function Cart() {
             </Tr>
           </Tbody>
         </Table>
+        <Box><ShippingDetails /></Box>
       </Box>
 
     </Flex>

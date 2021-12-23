@@ -117,7 +117,7 @@ export default function BookDetailsTemplate() {
       <Box mx={{ base: "30px", lg: "60px", xl: "90px" }}>
         <Box
           className="Shadow"
-          mt="40px"
+          mt={{base:'25px' ,md:"40px"}}
           p="19"
           display={{ base: "div", md: "flex" }}
           justifyContent={"space-between"}
