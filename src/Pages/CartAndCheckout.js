@@ -5,28 +5,14 @@ import BookDetailsTemplate from "../Component/BookDetailsTemplate";
 import ProductCart from "../Component/ProductCart";
 import "../Component/ProductCart.css";
 import Cart from "../Component/Cart";
+import ShippingDetails from "../Component/ShippingDetails";
 
 export default function CartAndCheckout() {
   return (
-    <Box h="100vh" w="100%">
-      <PopoverData />
+    <Box h="100vh" pt='90px'>
       <Box mx={{ base: "30px", lg: "60px", xl: "90px" }} mt="40px">
         <Cart />
-      </Box>
-
-      <Box
-        className="Shadow"
-        mt="50px"
-        mx={{ base: "30px", lg: "60px", xl: "90px" }}
-      >
-        <ProductCart title="Related Books From Previous Order History" />
-      </Box>
-      <Box
-        className="Shadow"
-        mt="50px"
-        mx={{ base: "30px", lg: "60px", xl: "90px" }}
-      >
-        <ProductCart title="Horro Collection" />
+        <ShippingDetails />
       </Box>
     </Box>
   );

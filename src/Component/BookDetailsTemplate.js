@@ -178,6 +178,7 @@ export default function BookDetailsTemplate() {
             mt={{base:"5", md:'initial'}}
             w={{ base: "initial", md: "45%" }}
             ml={{ base: "initial", md: "10" }}
+            pl={{ base: "3", md: "10" }}
             display={"flex"}
             className="Shadow"
           >

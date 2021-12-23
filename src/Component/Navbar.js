@@ -12,7 +12,7 @@ import Search from "./Search";
 export default function Navbar({ children }) {
   return (
     <Box h="100vh">
-      <Box w="100%" h="80px" bg="#003815">
+      <Box w="100%" h="70px" bg="#003815" position="fixed" top='0' zIndex="1">
         <Box
           bg={{ base: "#1d5f73", sm: "none" }}
           h="100%"

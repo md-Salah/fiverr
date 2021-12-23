@@ -41,7 +41,7 @@ function Banner() {
     "It's the Possibility of Having a Dream Come True That Makes Life Interesting";
   const author = "Paulo Coelho";
   return (
-    <Box bg="#003810" h={{ base: "240px", sm: "330px", lg: "460px" }}>
+    <Box bg="#686868" h={{ base: "240px", sm: "330px", lg: "460px" }} mt='81px'>
       <Box px={{ base: "30px", lg: "60px", xl: "90px" }}>
         <Box maxW={{ base: "100%", md: "70%", lg: "60%" }}>
           <Text

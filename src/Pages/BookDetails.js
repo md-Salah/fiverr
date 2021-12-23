@@ -7,7 +7,7 @@ import "../Component/ProductCart.css";
 
 export default function BookDetails() {
   return (
-    <Box h="100vh">
+    <Box h="100vh" pt='67px'>
       <PopoverData />
       <BookDetailsTemplate />
       <Box
