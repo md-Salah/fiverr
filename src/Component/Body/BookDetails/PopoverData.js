@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import "./ProductCart.css";
+import "../CartAndCheckout/ProductCart";
 
 export default function PopoverData() {
 

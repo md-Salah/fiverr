@@ -1,13 +1,10 @@
 import React from "react";
-import Navbar from "./Component/Navbar";
-import RoutesContainer from "./Routes";
+import Main from "./Component/Main";
 
 export default function App() {
   return (
-    <div style={{fontFamily: "Mina"}}>
-      <Navbar>
-        <RoutesContainer />
-      </Navbar>
+    <div style={{ fontFamily: "Mina" }}>
+      <Main />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import ShippingDetails from "./ShippingDetails";
+import ShippingDetails from "../ShippingDetails";
 import {
   Box,
   Flex,

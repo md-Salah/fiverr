@@ -19,8 +19,8 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import React from "react";
-import "./ProductCart.css";
-import { Slider } from "infinite-react-carousel/lib";
+import "../../CartAndCheckout/ProductCart";
+// import { Slider } from "infinite-react-carousel/lib";
 
 export default function BookDetailsTemplate() {
   const Info = [
