@@ -1,17 +1,11 @@
 import React from "react";
-import {
-    Box,
-    Flex,
-    Image,
-    Button,
-    Text
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Button, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Search from "../Body/Search";
 
-export default function Navbar({ children }) {
+export default function Header({ children }) {
     return (
-        <Box h="100vh">
+        <Box>
             <Box w="100%" h="70px" bg="#003815" position="fixed" top='0' zIndex="1">
                 <Box
                     bg={{ base: "#1d5f73", sm: "none" }}
@@ -51,7 +45,7 @@ export default function Navbar({ children }) {
                             justifyContent={"flex-end"}
                             alignItems={"center"}
                         >
-                            {/*<Search isNav={true} />*/}
+                            <Search isNav={true} />
                             {NavbarText("Popular Genre", "/")}
                             {NavbarText("Author", "/")}
                             {NavbarText("Publisher", "/")}
