@@ -45,7 +45,7 @@ export default function Header({ children }) {
                             justifyContent={"flex-end"}
                             alignItems={"center"}
                         >
-                            <Search isNav={true} />
+                            {/* <Search isNav={true} /> */}
                             {NavbarText("Popular Genre", "/")}
                             {NavbarText("Author", "/")}
                             {NavbarText("Publisher", "/")}
