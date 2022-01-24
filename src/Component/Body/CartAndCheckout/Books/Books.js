@@ -37,17 +37,14 @@ class Books extends Component {
         <Box>
           <Book
             id={item.id}
+            key={item.id}
             bookName={item.bookName}
             priceNew={item.priceNew}
-            priceOld={item.Old}
+            priceOld={item.priceOld}
           />
         </Box>
       )
     })
-
-    console.log(popularBooks);
-
-
 
     return (
       <Box h="460px" bg="white">
@@ -71,26 +68,8 @@ class Books extends Component {
             bg='white'
             justifyContent={{ base: "center", sm: "space-between" }}
           >
-            {/* Books row starts here */}
-            {/* <Box>
-              <Book />
-            </Box>
-            <Box display={{ base: "none", sm: "initial" }}>
-              <Book />
-            </Box>
-            <Box display={{ base: "none", md: "initial" }}>
-              <Book />
-            </Box>
-            <Box display={{ base: "none", lg: "initial" }}>
-              <Book />
-            </Box>
-            <Box display={{ base: "none", xl: "initial" }}>
-              <Book />
-            </Box> */}
             {bookList}
-            {/* Book row ends here */}
           </Flex>
-
         </Box>
       </Box>
     )

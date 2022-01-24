@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import React from 'react';
 import BookDetails from "./BookDetails/BookDetails";
 import Home from "./Home/Home";
@@ -7,11 +7,11 @@ import Admin from "./Admin/Admin";
 
 export default function RoutesContainer() {
     return (
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/BookDetails' element={<BookDetails />} />
-            <Route path='/CheckOut' element={<CartAndCheckout />} />
-            <Route path='/Admin' element={<Admin />} />
-        </Routes>
+        <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/BookDetails' exact component={BookDetails} />
+            <Route path='/CheckOut' exact component={CartAndCheckout} />
+            <Route path='/Admin' exact component={Admin} />
+        </Switch>
     )
 }
