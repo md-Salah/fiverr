@@ -19,7 +19,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import React from "react";
-import "../../CartAndCheckout/ProductCart";
+// import "../../CartAndCheckout/ProductCart";
 // import { Slider } from "infinite-react-carousel/lib";
 
 export default function BookDetailsTemplate() {

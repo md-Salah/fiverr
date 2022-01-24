@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import PopoverData from "../BookDetails/PopoverData";
 // import BookDetailsTemplate from "../BookDetails/BookDetailsTemplate";
-import ProductCart from "../CartAndCheckout/ProductCart";
-import "../CartAndCheckout/ProductCart.css";
+// import ProductCart from "../CartAndCheckout/ProductCart";
+import "../CartAndCheckout/Books/Stylesheet/Books.css";
 import Cart from "../CartAndCheckout/Cart";
 // import ShippingDetails from "../Component/ShippingDetails";
 

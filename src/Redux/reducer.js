@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     customerId: null,
     customerName: null,
     errorMsg: null,
-    carCollection: [],
+    booksCollection: [],
     selectedCar: null,
     customers: [],
     invoice: [],
@@ -40,10 +40,10 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 displayName: null,
             }
-        case actionTypes.LOAD_CARS:
+        case actionTypes.LOAD_BOOKS:
             return {
                 ...state,
-                carCollection: action.payload,
+                booksCollection: action.payload,
             }
         case actionTypes.SELECTED_CAR:
             return {
