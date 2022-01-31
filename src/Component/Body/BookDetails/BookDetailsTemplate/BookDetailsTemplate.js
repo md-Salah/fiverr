@@ -5,8 +5,6 @@ import PriceHolder from "../PriceHolder/priceHolder";
 // import { Slider } from "infinite-react-carousel/lib";
 
 export default function BookDetailsTemplate(props) {
-  console.log(props.selectedBook[0].priceNew);
-  
   return (
     <Box w="100%">
       <Box mx={{ base: "30px", lg: "60px", xl: "90px" }}>
@@ -131,8 +129,20 @@ export default function BookDetailsTemplate(props) {
             mt={{ base: "10px", md: "initial" }}
             py={{ base: "4px", md: "initial" }}
           >
-            <PriceHolder selectedBook={props.selectedBook[0]} />
-            <PriceHolder selectedBook={props.selectedBook[0]} />
+            <PriceHolder
+              id={props.selectedBook[0].id}
+              name={props.selectedBook[0].bookName}
+              publisher={props.selectedBook[0].Publisher}
+              price={props.selectedBook[0].priceNew}
+              cover={props.selectedBook[0].Cover}
+              condition={props.selectedBook[0].Condition} />
+            <PriceHolder
+              id={props.selectedBook[0].id}
+              name={props.selectedBook[0].bookName}
+              publisher={props.selectedBook[0].Publisher}
+              price={props.selectedBook[0].priceOld}
+              cover="Paperback"
+              condition="Old" />
           </Flex>
         </Box>
       </Box>

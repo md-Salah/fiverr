@@ -1,28 +1,6 @@
 import React from "react";
 import ShippingDetails from "../ShippingDetails";
-import {
-  Box,
-  Flex,
-  Table,
-  Tbody,
-  Text,
-  Thead,
-  Td,
-  Tr,
-  Input,
-  Button,
-  Checkbox,
-  Stack,
-  Image,
-  Menu,
-  MenuButton,
-  Icon,
-  MenuList,
-  MenuItem,
-  HStack,
-  useNumberInput,
-  Select,
-} from "@chakra-ui/react";
+import {Box,Flex,Table,Tbody,Text,Thead,Td,Tr,Input,Button,Checkbox,Stack,Image,Menu,MenuButton,Icon,MenuList,MenuItem,HStack,useNumberInput,Select} from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faChevronDown } from "@fortawesome/free-solid-svg-icons";

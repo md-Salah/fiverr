@@ -28,12 +28,10 @@ class BookDetails extends Component {
 
     render() {
         const { state } = this.props.location;
-        console.log(state[0]);
 
         const selectedBook = this.props.books.filter((item) => {
             return item.id === state[0].id;
         })
-        console.log(selectedBook);
 
         return (
             <Box h="100vh" pt='67px'>
