@@ -29,5 +29,5 @@ export const CartInput = (bookId, bookName, bookPrice, bookPublisher, bookCondit
     }
 
     axios.post('http://localhost:3001/Cart', cartData)
-        .then(response => dispatch(CartDetails(response)))
+        .then(response => console.log(response))
 }

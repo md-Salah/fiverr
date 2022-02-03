@@ -112,13 +112,21 @@
   ],
   "Cart": [
     {
-      "bookId": 1,
-      "bookName": "book 1",
+      "bookId": 4,
+      "bookName": "book 4",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "40",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "id": 1
+    },
+    {
+      "bookId": 4,
+      "bookName": "book 4",
       "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
       "bookPrice": "100",
       "bookCondition": "New",
-      "bookCover": "Hard Cover",
-      "id": 1
+      "id": 2
     },
     {
       "bookId": 1,
@@ -127,7 +135,16 @@
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCover": "Hard Cover",
-      "id": 2
+      "id": 3
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "60",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "id": 4
     }
   ]
 }

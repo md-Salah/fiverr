@@ -56,7 +56,7 @@ export default function Cart() {
           </Box>
         </Flex>
 
-        <GenerateCart />
+        <GenerateCart isChecked={allChecked} />
       </Box>
 
       <Box w={{ base: "100%", md: "26%" }} mt={{ base: "20px", md: "initial" }}>
@@ -68,7 +68,7 @@ export default function Cart() {
               </Td>
             </Tr>
           </Thead>
-          <Tbody>
+          <Tbody><a href=""></a>
             <Tr>
               <Td w="70%">SubTotal</Td>
               <Td w="30%" textAlign="right">

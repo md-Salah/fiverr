@@ -1,6 +1,15 @@
 import React from 'react';
 import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, Stack, Image, Menu, MenuButton, Icon, MenuList, MenuItem, HStack, useNumberInput, Select } from "@chakra-ui/react";
 import Spinner from './Spinner';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (State) => {
+    return {}
+}
+
+const mapDispatchToProps = (Dispatch) => {
+    return {}
+}
 
 const CartBooks = [
     {
@@ -49,8 +58,39 @@ const CartBooks = [
     }
 ];
 
-function GenerateCart() {
+function GenerateCart(props) {
     const [checkedItems, setCheckedItems] = React.useState([false, true]);
+
+    const singleCheck = () => {
+        console.log("single");
+        return (
+            <Checkbox
+                mr="15px"
+                // isChecked={props.isChecked}
+                onChange={(e) => {
+                    console.log(e);
+                    setCheckedItems([e.target.checked, checkedItems[1]])
+                }
+                }
+            />)
+    }
+
+    const allCheck = () => {
+        console.log("all");
+        return (
+            <Checkbox
+                mr="15px"
+                isChecked={true}
+                onChange={(e) => {
+                    console.log(e);
+                    setCheckedItems([e.target.checked, checkedItems[1]])
+                }
+                }
+            />
+        )
+    }
+
+    console.log(props.isChecked);
 
     const GenerateCartBooks = CartBooks.map((book) => {
         return (
@@ -65,15 +105,7 @@ function GenerateCart() {
             >
                 <Flex w={{ base: "100%", md: "60%" }}>
                     <Flex w="105px">
-                        <Checkbox
-                            mr="15px"
-                            isChecked={checkedItems[0]}
-                            onChange={(e) => {
-                                console.log(e);
-                                setCheckedItems([e.target.checked, checkedItems[1]])
-                            }
-                            }
-                        ></Checkbox>
+                        {props.isChecked ? allCheck() : singleCheck()}
                         <Image maxW="70px" src={book.img} />
                     </Flex>
 
@@ -110,6 +142,6 @@ function GenerateCart() {
 }
 
 
-export default GenerateCart;
+export default connect(mapStateToProps, mapDispatchToProps)(GenerateCart);
 
 
