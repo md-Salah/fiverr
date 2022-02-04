@@ -1,134 +1,150 @@
 {
-    "Customer": [
-        {
-            "Name": "Sudipta Saha Niloy",
-            "Email": "niloy305968@gmail.com",
-            "Password": "bangladesh",
-            "ConfirmPassword": "bangladesh",
-            "CurrentAddress": "asd",
-            "NID": "123234",
-            "id": 1
-        },
-        {
-            "Name": "Admin",
-            "Email": "admin@gmail.com",
-            "Password": "admin",
-            "CurrentAddress": "",
-            "NID": "",
-            "id": 6
-        },
-        {
-            "Name": "Fahim hossian",
-            "Email": "fahim@gmail.com",
-            "Password": "abc1234",
-            "CurrentAddress": "ctg",
-            "NID": "123456789",
-            "id": 7
-        },
-        {
-            "Name": "Sourav Saha Nipun",
-            "Email": "sourav@gmail.com",
-            "Password": "bangladesh",
-            "CurrentAddress": "3/7 lalmatia",
-            "NID": "9604126279",
-            "id": 8
-        }
-    ],
-    "BookCollection": [
-        {
-            "bookName": "book 1",
-            "Author": "হুমায়ূন আহমেদ",
-            "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-            "Edition": "2nd Editor, 2015",
-            "Language": "বাংলা",
-            "Popularity": "high",
-            "NoOfPages": "75",
-            "Condition": "New",
-            "priceNew": "100",
-            "priceOld": "60",
-            "id": 1
-        },
-        {
-            "bookName": "book 2",
-            "Author": "হুমায়ূন আহমেদ",
-            "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-            "Edition": "2nd Editor, 2015",
-            "Language": "বাংলা",
-            "Popularity": "medium",
-            "NoOfPages": "75",
-            "Condition": "New",
-            "priceNew": "100",
-            "priceOld": "60",
-            "id": 2
-        },
-        {
-            "bookName": "book 3",
-            "Author": "হুমায়ূন আহমেদ",
-            "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-            "Edition": "2nd Editor, 2015",
-            "Language": "বাংলা",
-            "NoOfPages": "75",
-            "Popularity": "low",
-            "Condition": "New",
-            "priceNew": "100",
-            "priceOld": "60",
-            "id": 3
-        },
-        {
-            "bookName": "book 4",
-            "Author": "হুমায়ূন আহমেদ",
-            "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-            "Edition": "2nd Editor, 2015",
-            "Language": "বাংলা",
-            "NoOfPages": "75",
-            "Popularity": "high",
-            "Condition": "New",
-            "priceNew": "100",
-            "priceOld": "60",
-            "id": 4
-        },
-        {
-            "bookName": "book 5",
-            "Author": "হুমায়ূন আহমেদ",
-            "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-            "Edition": "2nd Editor, 2015",
-            "Language": "বাংলা",
-            "NoOfPages": "75",
-            "Popularity": "low",
-            "Condition": "New",
-            "priceNew": "100",
-            "priceOld": "60",
-            "id": 5
-        }
-    ],
-    "Invoice": [
-        {
-            "carName": "Audi A4 Avant g-tron",
-            "carPrice": "45636436",
-            "customerName": "Sudipta Saha Niloy",
-            "date": "Thursday, September 9th, 2021",
-            "id": 3
-        },
-        {
-            "carName": "Audi Car 2",
-            "carPrice": "6346324",
-            "customerName": "Nani Gopal Saha",
-            "date": "Thursday, September 9th, 2021",
-            "id": 4
-        },
-        {
-            "carName": "Audi A4 Avant g-tron",
-            "carPrice": "36509148.8",
-            "customerName": "Sudipta Saha Niloy",
-            "date": "Friday, September 10th, 2021",
-            "id": 5
-        },
-        {
-            "carName": "Toyota Allion",
-            "carPrice": "1241462",
-            "customerName": "Sourav Saha Nipun",
-            "date": "Friday, September 10th, 2021",
-            "id": 6
-        }
-    ]
+  "Customer": [
+    {
+      "Name": "Sudipta Saha Niloy",
+      "Email": "niloy305968@gmail.com",
+      "Password": "bangladesh",
+      "ConfirmPassword": "bangladesh",
+      "CurrentAddress": "asd",
+      "NID": "123234",
+      "id": 1
+    },
+    {
+      "Name": "Admin",
+      "Email": "admin@gmail.com",
+      "Password": "admin",
+      "CurrentAddress": "",
+      "NID": "",
+      "id": 6
+    },
+    {
+      "Name": "Fahim hossian",
+      "Email": "fahim@gmail.com",
+      "Password": "abc1234",
+      "CurrentAddress": "ctg",
+      "NID": "123456789",
+      "id": 7
+    },
+    {
+      "Name": "Sourav Saha Nipun",
+      "Email": "sourav@gmail.com",
+      "Password": "bangladesh",
+      "CurrentAddress": "3/7 lalmatia",
+      "NID": "9604126279",
+      "id": 8
+    }
+  ],
+  "BookCollection": [
+    {
+      "bookName": "book 1",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Translator": "মোতাহের হোসেন চৌধুরী",
+      "ISBN": 9841803593,
+      "Country": "বাংলাদেশ",
+      "Cover": "Hard Cover",
+      "Category": "অনুবাদ: প্রবন্ধ",
+      "Rating": "***",
+      "Review": "5 people reviewed",
+      "Language": "বাংলা",
+      "AvailableCopy": 100,
+      "Popularity": "high",
+      "PrintType": "Original",
+      "NoOfPages": "75",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 1
+    },
+    {
+      "bookName": "book 2",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "Popularity": "medium",
+      "NoOfPages": "75",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 2
+    },
+    {
+      "bookName": "book 3",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "NoOfPages": "75",
+      "Popularity": "low",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 3
+    },
+    {
+      "bookName": "book 4",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "NoOfPages": "75",
+      "Popularity": "high",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "40",
+      "id": 4
+    },
+    {
+      "bookName": "book 5",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "NoOfPages": "75",
+      "Popularity": "low",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 5
+    }
+  ],
+  "Cart": [
+    {
+      "bookId": 4,
+      "bookName": "book 4",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "40",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "id": 1
+    },
+    {
+      "bookId": 4,
+      "bookName": "book 4",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "100",
+      "bookCondition": "New",
+      "id": 2
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "100",
+      "bookCondition": "New",
+      "bookCover": "Hard Cover",
+      "id": 3
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "60",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "id": 4
+    }
+  ]
 }

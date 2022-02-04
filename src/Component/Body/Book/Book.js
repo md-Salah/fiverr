@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Text, Image, Grid, GridItem, Button, Heading, LinkBox, LinkOverlay, } from "@chakra-ui/react";
 
 class Book extends Component {
+    handleOnClick = (book) => {
+        // console.log(book);
+    }
+
     render() {
-        console.log(this.props);
         return (
-            <Link to="/BookDetails">
+            <Link to={{
+                pathname: "/BookDetails",
+                state: [{ id: this.props.id }]
+            }}>
                 <Box
                     h="340px"
                     w="240px"
@@ -16,6 +22,7 @@ class Book extends Component {
                     flexDirection={"column"}
                     alignItems={"center"}
                     className="ProductContainer"
+                    onClick={() => this.handleOnClick(this.props)}
                 >
                     <Image mt="3px" mx="auto" w="auto" h="85%" src="../../Books/book.jpg" />
 
