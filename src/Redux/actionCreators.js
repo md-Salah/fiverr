@@ -8,14 +8,26 @@ export const loadBooks = (books) => {
     }
 }
 
+export const loadCart = (cart) => {
+    return {
+        type: actionTypes.LOAD_CART,
+        payload: cart,
+    }
+}
+
 export const booksCollection = () => dispatch => {
     axios.get('http://localhost:3001/BookCollection')
         .then(response => dispatch(loadBooks(response.data)))
 }
 
+export const updateCartDetails = (book, isSelected) => dispatch => {
+    axios.put(`http://localhost:3001/Cart/${book.id}`, { ...book, isSelected: isSelected })
+        .then(response => console.log(response.data.isSelected))
+}
+
 export const CartDetails = () => dispatch => {
     axios.get('http://localhost:3001/Cart')
-        .then(response => console.log(response))
+        .then(response => dispatch(loadCart(response.data)))
 }
 
 export const CartInput = (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover) => dispatch => {

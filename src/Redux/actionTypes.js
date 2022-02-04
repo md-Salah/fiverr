@@ -4,7 +4,7 @@ export const AUTH_LOADING = 'AUTH_LOADING';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
 export const LOAD_BOOKS = 'LOAD_BOOKS';
-export const SELECTED_CAR = 'SELECTED_CAR';
+export const LOAD_CART = 'LOAD_CART';
 
 export const CUSTOMER_LIST = 'CUSTOMER_LIST';
 export const CAR_LIST = 'CAR_LIST';

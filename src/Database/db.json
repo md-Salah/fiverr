@@ -118,6 +118,7 @@
       "bookPrice": "40",
       "bookCondition": "Old",
       "bookCover": "Paperback",
+      "isSelected": true,
       "id": 1
     },
     {
@@ -126,6 +127,7 @@
       "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
       "bookPrice": "100",
       "bookCondition": "New",
+      "isSelected": true,
       "id": 2
     },
     {
@@ -135,6 +137,7 @@
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCover": "Hard Cover",
+      "isSelected": true,
       "id": 3
     },
     {
@@ -144,6 +147,7 @@
       "bookPrice": "60",
       "bookCondition": "Old",
       "bookCover": "Paperback",
+      "isSelected": true,
       "id": 4
     }
   ]
