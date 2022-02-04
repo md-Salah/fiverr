@@ -3,7 +3,7 @@ import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, 
 import Spinner from './Spinner';
 import { connect } from 'react-redux';
 import { CartDetails, updateCartDetails } from '../../../Redux/actionCreators';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const mapStateToProps = (State) => {
     return {
@@ -20,13 +20,13 @@ const mapDispatchToProps = (dispatch) => {
 
 function GenerateCart(props) {
     const [checkedItems, setCheckedItems] = React.useState([false, true]);
+    const [selectAll, setselectAll] = useState(false);
 
     useEffect(() => {
         props.cartDetails();
     }, []);
 
     const singleCheck = (book) => {
-        // console.log("single");
         return (
             <Checkbox
                 mr="15px"
@@ -42,9 +42,6 @@ function GenerateCart(props) {
     }
 
     const allCheck = (book) => {
-        // console.log(props.isChecked);
-        props.updateCartDetails(book, props.isChecked);
-        // window.location.reload(true);
         return (
             <Checkbox
                 mr="15px"
@@ -58,7 +55,7 @@ function GenerateCart(props) {
         )
     }
 
-    // console.log(props.cart);
+    // console.log(props.isChecked);
 
     const GenerateCartBooks = props.cart.map((book) => {
         return (
@@ -73,8 +70,7 @@ function GenerateCart(props) {
             >
                 <Flex w={{ base: "100%", md: "60%" }}>
                     <Flex w="15px">
-                        {/* {props.isChecked ? allCheck(book) : singleCheck(book)} */}
-                        {singleCheck(book)}
+                        {props.isChecked ? allCheck(book) : singleCheck(book)}
                         <Image maxW="70px" src={book.img} />
                     </Flex>
 

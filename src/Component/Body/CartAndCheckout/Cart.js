@@ -4,8 +4,24 @@ import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, 
 import GenerateCart from "./GenerateCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import { useEffect, useState } from "react";
+import { CartDetails, updateCartDetails } from "../../../Redux/actionCreators";
 
-export default function Cart() {
+const mapStateToProps = (State) => {
+  return {
+    cart: State.cart,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    cartDetails: () => dispatch(CartDetails()),
+    updateCartDetails: (book, isSelected) => dispatch(updateCartDetails(book, isSelected)),
+  }
+}
+
+function Cart(props) {
   const Payable = {
     SubTotal: 200,
     DeliveryCharge: 16,
@@ -16,8 +32,21 @@ export default function Cart() {
     Payable: 196,
   };
 
+  useEffect(() => {
+    props.cartDetails();
+  }, []);
+
   const [checkedItems, setCheckedItems] = React.useState([false, true]);
   const allChecked = checkedItems.every(Boolean);
+
+  const handleOnChange = (e) => {
+    console.log(e.target.checked);
+    props.cart.map((book) => {
+      // console.log(book.isSelected);
+      props.updateCartDetails(book, e.target.checked);
+    })
+    setCheckedItems([e.target.checked, e.target.checked]);
+  }
 
   return (
     <Flex
@@ -38,10 +67,7 @@ export default function Cart() {
             <Checkbox
               size="lg"
               isChecked={allChecked}
-              onChange={(e) => {
-                setCheckedItems([e.target.checked, e.target.checked])
-              }
-              }
+              onChange={(e) => handleOnChange(e)}
             >
               <Text mt="5px">Select All</Text>
             </Checkbox>
@@ -57,6 +83,7 @@ export default function Cart() {
         </Flex>
 
         <GenerateCart isChecked={allChecked} />
+
       </Box>
 
       <Box w={{ base: "100%", md: "26%" }} mt={{ base: "20px", md: "initial" }}>
@@ -128,3 +155,5 @@ export default function Cart() {
     </Flex>
   );
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)
