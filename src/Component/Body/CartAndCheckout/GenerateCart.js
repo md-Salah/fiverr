@@ -2,97 +2,61 @@ import React from 'react';
 import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, Stack, Image, Menu, MenuButton, Icon, MenuList, MenuItem, HStack, useNumberInput, Select } from "@chakra-ui/react";
 import Spinner from './Spinner';
 import { connect } from 'react-redux';
+import { CartDetails, updateCartDetails } from '../../../Redux/actionCreators';
+import { useEffect, useState } from 'react';
 
 const mapStateToProps = (State) => {
-    return {}
-}
-
-const mapDispatchToProps = (Dispatch) => {
-    return {}
-}
-
-const CartBooks = [
-    {
-        Bookid: 100005222,
-        Title: "লীলাবতীর মৃত্যু",
-        Author: "হুমায়ূন আহমেদ",
-        Translator: "মোতাহের হোসেন চৌধুরী",
-        Publisher: "বিশ্বসাহিত্য কেন্দ্র",
-        ISBN: 9841803593,
-        Edition: "2nd Editor, 2015",
-        NumberOfPages: 75,
-        Country: "বাংলাদেশ",
-        Language: "বাংলা",
-        img: "../../Books/book1.jpg",
-        Price: 100,
-        DiscountPrice: 80,
-        Cover: "Hard Cover",
-        Category: "অনুবাদ: প্রবন্ধ",
-        Rating: "***",
-        Review: "5 people reviewed",
-        AvailableCopy: 100,
-        Condition: "New",
-        PrintType: "Original",
-    },
-    {
-        Bookid: 100005222,
-        Title: "লীলাবতীর মৃত্যু",
-        Author: "হুমায়ূন আহমেদ",
-        Translator: "মোতাহের হোসেন চৌধুরী",
-        Publisher: "বিশ্বসাহিত্য কেন্দ্র",
-        ISBN: 9841803593,
-        Edition: "2nd Editor, 2015",
-        NumberOfPages: 75,
-        Country: "বাংলাদেশ",
-        Language: "বাংলা",
-        img: "../../Books/book1.jpg",
-        Price: 100,
-        DiscountPrice: 80,
-        Cover: "Hard Cover",
-        Category: "অনুবাদ: প্রবন্ধ",
-        Rating: "***",
-        Review: "5 people reviewed",
-        AvailableCopy: 100,
-        Condition: "New",
-        PrintType: "Original",
+    return {
+        cart: State.cart,
     }
-];
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        cartDetails: () => dispatch(CartDetails()),
+        updateCartDetails: (book, isSelected) => dispatch(updateCartDetails(book, isSelected)),
+    }
+}
 
 function GenerateCart(props) {
     const [checkedItems, setCheckedItems] = React.useState([false, true]);
 
-    const singleCheck = () => {
-        console.log("single");
+    useEffect(() => {
+        props.cartDetails();
+    }, []);
+
+    const singleCheck = (book) => {
         return (
             <Checkbox
                 mr="15px"
-                // isChecked={props.isChecked}
+                isChecked={book.isSelected}
                 onChange={(e) => {
-                    console.log(e);
-                    setCheckedItems([e.target.checked, checkedItems[1]])
+                    console.log(e.target.checked);
+                    props.updateCartDetails(book, e.target.checked);
+                    setCheckedItems([e.target.checked, book.isSelected]);
+                    window.location.reload(false);
                 }
                 }
             />)
     }
 
-    const allCheck = () => {
-        console.log("all");
+    const allCheck = (book) => {
         return (
             <Checkbox
                 mr="15px"
-                isChecked={true}
+                isChecked={props.isChecked}
                 onChange={(e) => {
-                    console.log(e);
-                    setCheckedItems([e.target.checked, checkedItems[1]])
+                    // console.log(e.target.checked);
+                    setCheckedItems([e.target.checked, book.isSelected]);
                 }
                 }
             />
         )
     }
 
-    console.log(props.isChecked);
+    // console.log(props.isChecked);
 
-    const GenerateCartBooks = CartBooks.map((book) => {
+    const GenerateCartBooks = props.cart.map((book) => {
         return (
             <Flex
                 flexDirection={{ base: "column", md: "row" }}
@@ -104,15 +68,15 @@ function GenerateCart(props) {
                 p="15px"
             >
                 <Flex w={{ base: "100%", md: "60%" }}>
-                    <Flex w="105px">
-                        {props.isChecked ? allCheck() : singleCheck()}
+                    <Flex w="15px">
+                        {props.isChecked ? allCheck(book) : singleCheck(book)}
                         <Image maxW="70px" src={book.img} />
                     </Flex>
 
                     <Box ml="20px">
-                        <Text>{book.Title}</Text>
-                        <Text>{book.Publisher}</Text>
-                        <Text>{"(" + book.Cover + ")"}</Text>
+                        <Text>{book.bookName}</Text>
+                        <Text>{book.bookPublisher}</Text>
+                        <Text>{"(" + book.bookCover + ")"}</Text>
                     </Box>
                 </Flex>
 
@@ -121,12 +85,12 @@ function GenerateCart(props) {
                     w={{ base: "100%", md: "40%" }}
                     justifyContent="space-between"
                 >
-                    <Spinner />
+                    <Spinner book={book} />
 
                     <Box textAlign="right" ml="40px">
-                        <Text>200 Tk</Text>
+                        <Text>{book.bookPrice * book.bookCount}</Text>
                         <Text textDecoration="line-through" color="red" fontSize="sm">
-                            350 Tk
+                            {parseInt(book.bookPrice * book.bookCount) + 50}
                         </Text>
                     </Box>
                 </Flex>

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        CartInput: (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover) => dispatch(CartInput(bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover))
+        CartInput: (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover, bookCount, isSelected) => dispatch(CartInput(bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover, bookCount, isSelected))
     }
 }
 
@@ -17,8 +17,8 @@ class PriceHolder extends Component {
 
     render() {
         // console.log(this.props);
-        const handleAddToCartButton = (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover) => {
-            this.props.CartInput(bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover);
+        const handleAddToCartButton = (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover, bookCount, isSelected) => {
+            this.props.CartInput(bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover, bookCount, isSelected);
             this.setState({
                 AddedToCart: true,
             })
@@ -33,7 +33,7 @@ class PriceHolder extends Component {
                     w="80%"
                     fontWeight={"normal"}
                     size="md"
-                    onClick={() => handleAddToCartButton(this.props.id, this.props.name, this.props.price, this.props.publisher, this.props.condition, this.props.cover)}
+                    onClick={() => handleAddToCartButton(this.props.id, this.props.name, this.props.price, this.props.publisher, this.props.condition, this.props.cover, 1, false)}
                 >
                     Add to Cart
                 </Button>
