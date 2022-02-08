@@ -4,6 +4,7 @@ import BookDetails from "./BookDetails/BookDetails";
 import Home from "./Home/Home";
 import CartAndCheckout from "./CartAndCheckout/CartAndCheckout";
 import Admin from "./Admin/Admin";
+import { Auth } from "./Auth/Auth";
 
 export default function RoutesContainer() {
     return (
@@ -12,6 +13,7 @@ export default function RoutesContainer() {
             <Route path='/BookDetails' exact component={BookDetails} />
             <Route path='/CheckOut' exact component={CartAndCheckout} />
             <Route path='/Admin' exact component={Admin} />
+            <Route path='/Auth' exact component={Auth} />
         </Switch>
     )
 }

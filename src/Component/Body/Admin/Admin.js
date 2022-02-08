@@ -32,7 +32,8 @@ export default function Admin() {
           <TabPanel>
             <AddBook />
           </TabPanel>
-          <TabPanel>Dashboard</TabPanel>
+          <TabPanel>
+          </TabPanel>
         </TabPanels>
       </Tabs>
     </Box>

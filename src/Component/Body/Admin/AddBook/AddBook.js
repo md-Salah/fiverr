@@ -11,7 +11,7 @@ import {
 export const AddBook = () => {
   return (
     <FormControl>
-      <Stack>
+      <Stack w={{ lg: "60%" }} mx="auto">
         <Input placeholder="Title" size="sm" />
         <Input placeholder="Author" size="sm" />
         <Flex>
@@ -26,9 +26,13 @@ export const AddBook = () => {
           <Input maxW="20%" placeholder="Qty" size="sm" />
         </Flex>
         <Flex>
-          <Input w="40%" placeholder="Cover" size="sm" />
-          <Input w="40%" placeholder="Print" size="sm" />
+          <Input w="40%" placeholder="Cover Type" size="sm" />
+          <Input w="40%" placeholder="Print Quality" size="sm" />
           <Input w="20%" placeholder="Cost" size="sm" />
+        </Flex>
+        <Flex>
+          <Input w="40%" placeholder="No of Pages" size="sm" />
+          <Input w="40%" placeholder="Condition" size="sm" />
         </Flex>
         <Input placeholder="Category tags" size="sm" />
         <Flex>
@@ -39,8 +43,12 @@ export const AddBook = () => {
           ></Textarea>
           <Textarea w="45%" placeholder="Notes" size="sm"></Textarea>
         </Flex>
-        <Button size='sm' colorScheme='blue'>Add New To Database</Button>
-        <Button size='sm' colorScheme='blue'>Update Existing One</Button>
+          <Button size="sm" colorScheme="teal">
+            Add New To Database
+          </Button>
+          <Button size="sm" colorScheme="teal">
+            Update Existing One
+          </Button>
       </Stack>
     </FormControl>
   );
