@@ -20,7 +20,6 @@ const mapDispatchToProps = (dispatch) => {
 
 function GenerateCart(props) {
     const [checkedItems, setCheckedItems] = React.useState([false, true]);
-    const [selectAll, setselectAll] = useState(false);
 
     useEffect(() => {
         props.cartDetails();
@@ -86,12 +85,12 @@ function GenerateCart(props) {
                     w={{ base: "100%", md: "40%" }}
                     justifyContent="space-between"
                 >
-                    <Spinner />
+                    <Spinner book={book} />
 
                     <Box textAlign="right" ml="40px">
-                        <Text>{book.bookPrice}</Text>
+                        <Text>{book.bookPrice * book.bookCount}</Text>
                         <Text textDecoration="line-through" color="red" fontSize="sm">
-                            {parseInt(book.bookPrice) + 50}
+                            {parseInt(book.bookPrice * book.bookCount) + 50}
                         </Text>
                     </Box>
                 </Flex>

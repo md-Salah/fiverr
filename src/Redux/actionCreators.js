@@ -25,12 +25,17 @@ export const updateCartDetails = (book, isSelected) => dispatch => {
         .then(response => console.log(response.data.isSelected))
 }
 
+export const updateBookCount = (book, bookCount) => dispatch => {
+    axios.put(`http://localhost:3001/Cart/${book.id}`, { ...book, bookCount: bookCount })
+        // .then(response => console.log(response.data.bookCount))
+}
+
 export const CartDetails = () => dispatch => {
     axios.get('http://localhost:3001/Cart')
         .then(response => dispatch(loadCart(response.data)))
 }
 
-export const CartInput = (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover) => dispatch => {
+export const CartInput = (bookId, bookName, bookPrice, bookPublisher, bookCondition, bookCover, bookCount, isSelected) => dispatch => {
     let cartData = {
         bookId: bookId,
         bookName: bookName,
@@ -38,6 +43,8 @@ export const CartInput = (bookId, bookName, bookPrice, bookPublisher, bookCondit
         bookPrice: bookPrice,
         bookCondition: bookCondition,
         bookCover: bookCover,
+        bookCount: bookCount,
+        isSelected: isSelected
     }
 
     axios.post('http://localhost:3001/Cart', cartData)
