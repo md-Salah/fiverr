@@ -108,6 +108,26 @@
       "priceNew": "100",
       "priceOld": "60",
       "id": 5
+    },
+    {
+      "Title": "মন্দ্রসপ্তক",
+      "Author": "হুমায়ূন আহমেদ",
+      "Publisher": "সময়",
+      "Translator": "",
+      "Edition": "1993",
+      "ActualPrice": "80",
+      "SellPrice": "",
+      "DiscountPrice": "",
+      "Qty": "1",
+      "CoverType": "",
+      "PrintQuality": "",
+      "Cost": "40",
+      "NoOfPages": "",
+      "Condition": "",
+      "CategoryTags": "",
+      "DetailsDescription": "",
+      "Notes": "",
+      "id": 6
     }
   ],
   "Cart": [
