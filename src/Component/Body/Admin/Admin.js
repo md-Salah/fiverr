@@ -1,20 +1,8 @@
 import React, { Component, useState } from "react";
-import {
-  Box,
-  Text,
-  Button,
-  Link,
-  Select,
-  Flex,
-  Tab,
-  Tabs,
-  TabList,
-  TabPanels,
-  TabPanel,
-} from "@chakra-ui/react";
+import { Box, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/react";
 import { Orders } from "./OrderList/Orders";
-import { AddBook } from "./AddBook/AddBook";
 import AllBook from "./AllBook/AllBook";
+import AddBook from "./AddBook/AddBook.js";
 
 export default function Admin() {
   return (
