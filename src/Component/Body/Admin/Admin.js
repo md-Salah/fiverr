@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Orders } from "./OrderList/Orders";
 import { AddBook } from "./AddBook/AddBook";
+import AllBook from "./AllBook/AllBook";
 
 export default function Admin() {
   return (
@@ -22,6 +23,7 @@ export default function Admin() {
         <TabList>
           <Tab>Orders</Tab>
           <Tab>Add Book</Tab>
+          <Tab>All Book</Tab>
           <Tab>Dashboard</Tab>
         </TabList>
 
@@ -31,6 +33,9 @@ export default function Admin() {
           </TabPanel>
           <TabPanel>
             <AddBook />
+          </TabPanel>
+          <TabPanel>
+            <AllBook />
           </TabPanel>
           <TabPanel>
           </TabPanel>
