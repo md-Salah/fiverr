@@ -52,9 +52,14 @@
       "PrintQuality": "Original",
       "Condition": "Old",
       "TotalPage": "80",
-      "CategoryTags": ["সমকালীন উপন্যাস"],
+      "CategoryTags": [
+        "সমকালীন উপন্যাস"
+      ],
       "Summary": "",
-      "Notes": ["অটোগ্রাফ আছে", "কভার একটু ছিঁড়া"],
+      "Notes": [
+        "অটোগ্রাফ আছে",
+        "কভার একটু ছিঁড়া"
+      ],
       "Country": "Bangladesh",
       "Language": "Bangla",
       "ISBN": "9789849184768",
@@ -80,15 +85,23 @@
       "PrintQuality": "Original",
       "Condition": "Old",
       "TotalPage": "80",
-      "CategoryTags": ["সমকালীন উপন্যাস"],
+      "CategoryTags": [
+        "সমকালীন উপন্যাস"
+      ],
       "Summary": "হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই",
-      "Notes": ["অটোগ্রাফ আছে", "কভার একটু ছিঁড়া"],
+      "Notes": [
+        "অটোগ্রাফ আছে",
+        "কভার একটু ছিঁড়া"
+      ],
       "Country": "Bangladesh",
       "Language": "Bangla",
       "ISBN": "9789849184768",
       "Popularity": "High",
       "Rating": "3.5",
-      "Reviews": ["porechi valoi legeche", "pathok point theke puraton niyechi onk valo"],
+      "Reviews": [
+        "porechi valoi legeche",
+        "pathok point theke puraton niyechi onk valo"
+      ],
       "id": "10-085P"
     },
     {
@@ -108,15 +121,23 @@
       "PrintQuality": "Original",
       "Condition": "Old",
       "TotalPage": "80",
-      "CategoryTags": ["সমকালীন উপন্যাস"],
+      "CategoryTags": [
+        "সমকালীন উপন্যাস"
+      ],
       "Summary": "হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই",
-      "Notes": ["অটোগ্রাফ আছে", "কভার একটু ছিঁড়া"],
+      "Notes": [
+        "অটোগ্রাফ আছে",
+        "কভার একটু ছিঁড়া"
+      ],
       "Country": "Bangladesh",
       "Language": "Bangla",
       "ISBN": "9789849184768",
       "Popularity": "High",
       "Rating": "3.5",
-      "Reviews": ["porechi valoi legeche", "pathok point theke puraton niyechi onk valo"],
+      "Reviews": [
+        "porechi valoi legeche",
+        "pathok point theke puraton niyechi onk valo"
+      ],
       "id": "10-456P"
     }
   ],
@@ -163,6 +184,24 @@
       "bookCount": 2,
       "isSelected": true,
       "id": 4
+    },
+    {
+      "bookId": "10-009P",
+      "bookPublisher": "কাকলী প্রকাশনী",
+      "bookCondition": "Old",
+      "bookCover": "HardCover",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 5
+    },
+    {
+      "bookId": "10-009P",
+      "bookPublisher": "কাকলী প্রকাশনী",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 6
     }
   ]
 }
