@@ -36,109 +36,52 @@
   ],
   "BookCollection": [
     {
-      "url": "#",
-      "Title": "তুমি আমায় ডেকেছিলে ছুটির নিমন্ত্রণে",
+      "bookName": "book 1",
       "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "কাকলী প্রকাশনী",
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
       "Translator": "মোতাহের হোসেন চৌধুরী",
-      "PublicationYear": "1993",
-      "Edition": "14th Printed, 1993",
-      "PrintedPrice": "150",
-      "SellPrice": "70",
-      "DiscountPrice": "70",
-      "Cost": "30",
-      "Qty": "1",
-      "Cover": "HardCover",
-      "PrintQuality": "Original",
-      "Condition": "Old",
-      "TotalPage": "80",
-      "CategoryTags": [
-        "সমকালীন উপন্যাস"
-      ],
-      "Summary": "",
-      "Notes": [
-        "অটোগ্রাফ আছে",
-        "কভার একটু ছিঁড়া"
-      ],
-      "Country": "Bangladesh",
-      "Language": "Bangla",
-      "ISBN": "9789849184768",
-      "Popularity": "High",
-      "Rating": "3.5",
-      "Reviews": [],
-      "id": "10-009P"
+      "ISBN": 9841803593,
+      "Country": "বাংলাদেশ",
+      "Cover": "Hard Cover",
+      "Category": "অনুবাদ: প্রবন্ধ",
+      "Rating": "***",
+      "Review": "5 people reviewed",
+      "Language": "বাংলা",
+      "AvailableCopy": 100,
+      "Popularity": "high",
+      "PrintType": "Original",
+      "NoOfPages": "75",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 1
     },
     {
-      "url": "#",
-      "Title": "তুমি আমায় ডেকেছিলে ছুটির নিমন্ত্রণে",
+      "bookName": "book 2",
       "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "কাকলী প্রকাশনী",
-      "Translator": "মোতাহের হোসেন চৌধুরী",
-      "PublicationYear": "1993",
-      "Edition": "14th Printed, 1993",
-      "PrintedPrice": "150",
-      "SellPrice": "70",
-      "DiscountPrice": "70",
-      "Cost": "30",
-      "Qty": "1",
-      "Cover": "HardCover",
-      "PrintQuality": "Original",
-      "Condition": "Old",
-      "TotalPage": "80",
-      "CategoryTags": [
-        "সমকালীন উপন্যাস"
-      ],
-      "Summary": "হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই",
-      "Notes": [
-        "অটোগ্রাফ আছে",
-        "কভার একটু ছিঁড়া"
-      ],
-      "Country": "Bangladesh",
-      "Language": "Bangla",
-      "ISBN": "9789849184768",
-      "Popularity": "High",
-      "Rating": "3.5",
-      "Reviews": [
-        "porechi valoi legeche",
-        "pathok point theke puraton niyechi onk valo"
-      ],
-      "id": "10-085P"
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "Popularity": "medium",
+      "NoOfPages": "75",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 2
     },
     {
-      "url": "#",
-      "Title": "তুমি আমায় ডেকেছিলে ছুটির নিমন্ত্রণে",
+      "bookName": "book 3",
       "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "কাকলী প্রকাশনী",
-      "Translator": "মোতাহের হোসেন চৌধুরী",
-      "PublicationYear": "1993",
-      "Edition": "14th Printed, 1993",
-      "PrintedPrice": "150",
-      "SellPrice": "70",
-      "DiscountPrice": "70",
-      "Cost": "30",
-      "Qty": "1",
-      "Cover": "HardCover",
-      "PrintQuality": "Original",
-      "Condition": "Old",
-      "TotalPage": "80",
-      "CategoryTags": [
-        "সমকালীন উপন্যাস"
-      ],
-      "Summary": "হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই হুমায়ূন আহমেদ কোথাও কেউ নেই",
-      "Notes": [
-        "অটোগ্রাফ আছে",
-        "কভার একটু ছিঁড়া"
-      ],
-      "Country": "Bangladesh",
-      "Language": "Bangla",
-      "ISBN": "9789849184768",
-      "Popularity": "High",
-      "Rating": "3.5",
-      "Reviews": [
-        "porechi valoi legeche",
-        "pathok point theke puraton niyechi onk valo"
-      ],
-      "id": "10-456P"
+      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "Edition": "2nd Editor, 2015",
+      "Language": "বাংলা",
+      "NoOfPages": "75",
+      "Popularity": "high",
+      "Condition": "New",
+      "priceNew": "100",
+      "priceOld": "60",
+      "id": 3
     }
   ],
   "Cart": [
