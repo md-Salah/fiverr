@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Box, Table, Thead, Tr, Th, Tbody } from "@chakra-ui/react";
-import db from "../../../../Database/db.json";
 import { ShowBook } from "./ShowBook";
 
 const tableTitles = [
@@ -30,7 +29,39 @@ const tableTitles = [
   ["Rating"],
   ["Review"],
   ["id"],
-  ["Submit"],
+];
+
+const BookCollection = [
+  {
+    Image: "#",
+    Title: "বাদশাহ নামদার",
+    Author: "হুমায়ূন আহমেদ",
+    Publisher: "বিশ্বসাহিত্য কেন্দ্র",
+    Translator: "মোতাহের হোসেন চৌধুরী",
+    "Publica. Year": "2012",
+    Edition: "2nd Editor, 2015",
+    "Printed Price": "300",
+    "Sell Price": "160",
+    "Discount Price": "140",
+    Cost: "50",
+    Qty: "20",
+    Cover: "Hard Cover",
+    "Print Quality": "",
+    Condition: "Old",
+    "Total Page": "98",
+    "Category Tags": ["War", "History", "Biography"],
+    Summary:
+      "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
+    Notes:
+      "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
+    Country: "Bangladesh",
+    Language: "Bangla",
+    ISBN: "01155787414",
+    Popularity: "Popular",
+    Rating: "5",
+    Review: "7 people reviewed",
+    id: "144555",
+  },
 ];
 
 export default class AllBook extends Component {
@@ -47,8 +78,8 @@ export default class AllBook extends Component {
 
   render() {
     return (
-      <Box>
-        <Table size="sm" colorScheme="teal" fontSize="sm" variant="unstyled">
+      <Box w='100%'>
+        <Table size="sm" colorScheme="teal" fontSize="sm" variant="unstyled" maxW='inherit'>
           <Thead>
             <Tr>
               {tableTitles.map(([title, wide = "unset"]) => (
@@ -70,8 +101,8 @@ export default class AllBook extends Component {
             </Tr>
           </Thead>
           <Tbody>
-            {db.BookCollection.map((book) => (
-              <ShowBook key={book.id} book={book} />
+            {BookCollection.map((book) => (
+              <ShowBook key={book.id} book={book} tableTitles={tableTitles} />
             ))}
           </Tbody>
         </Table>

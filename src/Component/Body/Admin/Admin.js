@@ -11,7 +11,7 @@ export default function Admin() {
         <TabList>
           <Tab>Orders</Tab>
           <Tab>Add Book</Tab>
-          {/* <Tab>All Book</Tab> */}
+          <Tab>All Book</Tab>
           <Tab>Dashboard</Tab>
         </TabList>
 
@@ -22,9 +22,9 @@ export default function Admin() {
           <TabPanel>
             <AddBook />
           </TabPanel>
-          {/* <TabPanel>
+          <TabPanel>
             <AllBook />
-          </TabPanel> */}
+          </TabPanel>
           <TabPanel>
           </TabPanel>
         </TabPanels>
