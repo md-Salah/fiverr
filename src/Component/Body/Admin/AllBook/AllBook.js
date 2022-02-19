@@ -1,5 +1,18 @@
 import React, { Component } from "react";
-import { Box, Table, Thead, Tr, Th, Tbody } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  HStack,
+  Select,
+  CheckboxGroup,
+  Checkbox,
+} from "@chakra-ui/react";
+import { AiOutlineFilter } from "react-icons/ai";
 import { ShowBook } from "./ShowBook";
 
 const tableTitles = [
@@ -69,17 +82,50 @@ export default class AllBook extends Component {
     super(props);
 
     this.state = {
-      Author: "",
-      Publisher: "",
-      Language: "",
-      Condition: "",
+      filterBy: {
+        selectedAuthor: "",
+        authors: ["Humayun Ahmed", "Zafor iqbal", "Agatha Cristie"],
+        selectedPublisher: "",
+        publishers: ["Sheba Prokashoni", "Onno Prokash", "Somokalin Prokashoni"],
+        selectedCondition: "",
+        Conditions: ["Old", "New"],
+        selectedCategories: [],
+        categories: ["War", "History", "Biography", "Programming", "Learn English", "BCS", "Thriller", "Math", "HSC Admission", "Motivational"],
+        selectedPrintQuality: "",
+        printQualities: ["Orginal", "Local", "Premium", "Indian Orginal"]
+      },
     };
   }
 
   render() {
     return (
-      <Box w='100%'>
-        <Table size="sm" colorScheme="teal" fontSize="sm" variant="unstyled" maxW='inherit'>
+      <Box w="100%">
+        <HStack mb="15px" w={{base: '100%', md: '50%'}}>
+          <Select placeholder="Author">
+           { this.state.filterBy.authors.map((value, i)=>(<option key={i}>{value}</option>)) }
+          </Select>
+          <Select placeholder="Publisher">
+          { this.state.filterBy.publishers.map((value, i)=>(<option key={i}>{value}</option>)) }
+          </Select>
+          <Select placeholder="Condition">
+          { this.state.filterBy.Conditions.map((value, i)=>(<option key={i}>{value}</option>)) }
+          </Select>
+
+          <Select placeholder="Category">
+          { this.state.filterBy.categories.map((value, i)=>(<option key={i}>{value}</option>)) }
+          </Select>
+          <Select placeholder="Print Quality">
+          { this.state.filterBy.printQualities.map((value, i)=>(<option key={i}>{value}</option>)) }
+          </Select>
+        </HStack>
+
+        <Table
+          size="sm"
+          colorScheme="teal"
+          fontSize="sm"
+          variant="unstyled"
+          maxW="inherit"
+        >
           <Thead>
             <Tr>
               {tableTitles.map(([title, wide = "unset"]) => (
