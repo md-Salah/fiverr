@@ -101,21 +101,21 @@ export default class AllBook extends Component {
     return (
       <Box w="100%">
         <HStack mb="15px" w={{base: '100%', md: '50%'}}>
-          <Select placeholder="Author">
-           { this.state.filterBy.authors.map((value, i)=>(<option key={i}>{value}</option>)) }
+          <Select placeholder="Author" size='small' variant='filled'>
+           { this.state.filterBy.authors.map((value, i)=>(<option key={i} value={value}>{value}</option>)) }
           </Select>
-          <Select placeholder="Publisher">
-          { this.state.filterBy.publishers.map((value, i)=>(<option key={i}>{value}</option>)) }
+          <Select placeholder="Publisher" size='small' variant='filled'>
+          { this.state.filterBy.publishers.map((value, i)=>(<option key={i} value={value}>{value}</option>)) }
           </Select>
-          <Select placeholder="Condition">
-          { this.state.filterBy.Conditions.map((value, i)=>(<option key={i}>{value}</option>)) }
+          <Select placeholder="Condition" size='small' variant='filled'>
+          { this.state.filterBy.Conditions.map((value, i)=>(<option key={i} value={value}>{value}</option>)) }
           </Select>
 
-          <Select placeholder="Category">
-          { this.state.filterBy.categories.map((value, i)=>(<option key={i}>{value}</option>)) }
+          <Select placeholder="Category" size='small' variant='filled'>
+          { this.state.filterBy.categories.map((value, i)=>(<option key={i} value={value}>{value}</option>)) }
           </Select>
-          <Select placeholder="Print Quality">
-          { this.state.filterBy.printQualities.map((value, i)=>(<option key={i}>{value}</option>)) }
+          <Select placeholder="Print Quality" size='small' variant='filled'>
+          { this.state.filterBy.printQualities.map((value, i)=>(<option key={i} value={value}>{value}</option>)) }
           </Select>
         </HStack>
 
