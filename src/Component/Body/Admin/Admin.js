@@ -1,8 +1,9 @@
 import React, { Component, useState } from "react";
 import { Box, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/react";
 import { Orders } from "./OrderList/Orders";
-import AllBook from "./AllBook/AllBook";
+import { AllBook } from "./AllBook/AllBook";
 import AddBook from "./AddBook/AddBook.js";
+import { Dashboard } from "./Dashboard/Dashboard";
 
 export default function Admin() {
   return (
@@ -26,6 +27,9 @@ export default function Admin() {
             <AllBook />
           </TabPanel>
           <TabPanel>
+
+            {//<div> <Dashboard /> </div>
+            }
           </TabPanel>
         </TabPanels>
       </Tabs>
