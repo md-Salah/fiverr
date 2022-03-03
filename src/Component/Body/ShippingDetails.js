@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, FormControl, FormLabel, Input, InputGroup, Text } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Input, Textarea, Text } from "@chakra-ui/react";
 
 export default function ShippingDetails() {
   return (
-    <Box mt="30px" border='2px solid #319795' >
+    <Box mt="30px" boxShadow='base'>
       <Text fontWeight="bold" bg="#319795" textAlign="center" color="white" py='5px' >
         Shipping Details
       </Text>
@@ -11,17 +11,17 @@ export default function ShippingDetails() {
       <Box p='10px'>
       <FormControl isRequired>
 
-          <FormLabel mb='0' >Name:</FormLabel>
+          <FormLabel mb='0' htmlFor="name">Name:</FormLabel>
           <Input id='name' placeholder="Md Abdullah" />
 
-          <FormLabel mb='0' mt='5'>Phone No:</FormLabel>
-          <Input id='name' placeholder="01311101113" />
+          <FormLabel mb='0' mt='5' htmlFor="number">Phone No:</FormLabel>
+          <Input id='number' placeholder="01500001111" />
 
-          <FormLabel mb='0' mt='5'>Email:</FormLabel>
-          <Input id='name' placeholder="example@gmail.com" />
+          <FormLabel mb='0' mt='5' htmlFor="email">Email:</FormLabel>
+          <Input id='email' placeholder="example@gmail.com" />
 
-          <FormLabel mb='0' mt='5'>Delivery Address:</FormLabel>
-          <Input h='100px' type='text' id='name' placeholder="House No, Road No, Area, Thana, District" />
+          <FormLabel mb='0' mt='5' htmlFor="address">Delivery Address:</FormLabel>
+          <Textarea h='100px' type='textarea' id='address' placeholder="House No, Road No, Area, Thana, District" />
 
       </FormControl>
       </Box>

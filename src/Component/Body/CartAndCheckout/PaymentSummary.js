@@ -33,7 +33,7 @@ function PaymentSummary(props) {
     return (
         // Checkout section starts here
         <Box w={{ base: "100%", md: "26%" }} mt={{ base: "20px", md: "initial" }}>
-            <Table variant="striped" size="sm" border="2px solid #319795">
+            <Table variant="striped" size="sm" boxShadow='base'>
                 <Thead bg="#319795">
                     <Tr fontWeight="bold" bg="#319795">
                         <Td colSpan="2" textAlign="center" color="white">

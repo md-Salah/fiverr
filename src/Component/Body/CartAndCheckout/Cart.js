@@ -54,7 +54,7 @@ function Cart(props) {
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
     >
-      <Box w={{ base: "100%", md: "70%" }} border="2px solid #319795">
+      <Box w={{ base: "100%", md: "70%" }} boxShadow='base'>
         <Flex
           px="20px"
           bg="#319795"

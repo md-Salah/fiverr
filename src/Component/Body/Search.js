@@ -1,34 +1,52 @@
-import React from "react";
-import { Box, Flex, Image, Input, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Box,
+  Input,
+  Button,
+  InputGroup,
+  InputLeftElement,
+  InputRightAddon,
+  Icon,
+  FormControl,
+} from "@chakra-ui/react";
+
+import { SearchIcon } from "@chakra-ui/icons";
 
 export default function Search(props) {
-  let isNav = props.isNav;
-  
+  const [value, setValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(value);
+  };
+
   return (
-    <Flex h={isNav ? "35px" : "40px"} mt={isNav ? 0 : "5px"} justifyContent={{ base: "center", sm: "left" }} mr={isNav ? '70px' : 0}>
-      <Flex bg="white" borderLeftRadius={"5px"} alignItems={"center"}>
-        <Box mx="2" display="flex" alignItems="center">
-          <Image h="20px" src="../../search icon.png" alt="search" />
-        </Box>
-        <Input
-          w={isNav ? { base: "140px", sm: "160px", md: "200px", xl: "300px" } : { base: "180px", sm: "300px", md: "400px", xl: "550px" }}
-          h="inherit"
-          pl="0"
-          mr="10px"
-          variant="Flushed"
-          type={"search"}
-          placeholder="Search by Book or Author Name"
-        />
-      </Flex>
-      <Button
-        h="inherit"
-        bg='#319795'
-        color="white"
-        borderLeftRadius={"0"}
-        borderRightRadius={"5px"}
-      >
-        Search
-      </Button>
-    </Flex>
+    <Box>
+      <form onSubmit={handleSubmit}>
+        <InputGroup>
+          <InputLeftElement>
+            <Icon as={SearchIcon} />
+          </InputLeftElement>
+          <Input
+            bg="white"
+            variant="outline"
+            type="text"
+            placeholder="Search by Book / Author Name"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <InputRightAddon p="0">
+            <Button
+              type='submit'
+              borderLeftRadius="none"
+              colorScheme="gray"
+              mx="0"
+            >
+              Search
+            </Button>
+          </InputRightAddon>
+        </InputGroup>
+        </form>
+    </Box>
   );
 }
