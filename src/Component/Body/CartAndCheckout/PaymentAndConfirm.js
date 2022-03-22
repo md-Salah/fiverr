@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormHelperText,
   FormControl,
+  Heading,
 } from "@chakra-ui/react";
 
 export const PaymentAndConfirm = () => {
@@ -19,20 +20,17 @@ export const PaymentAndConfirm = () => {
   const [paymentGateway, setPaymentGateway] = useState("Bkash");
 
   return (
-    <Box mt="10" boxShadow="base">
-      <Text
-        fontWeight="bold"
-        bg="#319795"
-        textAlign="center"
-        color="white"
-        py="5px"
-      >
+    <Box m='20px'>
+      {/* Section Title */}
+      <Heading size="md" color="#fac520" mb="15px">
         Payment
-      </Text>
+      </Heading>
+      {/*Title ends */}
 
-      <Box m="2">
+      {/*Payment method - full paid & cash on delivery */}
+      <Box pt="15px">
         <RadioGroup
-          name="payment-type"
+          name="payment-method"
           onChange={setPaymentType}
           value={paymentType}
         >
@@ -41,26 +39,28 @@ export const PaymentAndConfirm = () => {
             <Radio value="Full Paid">Full Paid</Radio>
             <Radio value="Cash On Delivery">Cash On Delivery</Radio>
           </Stack>
-          {paymentType === "Full Paid" ? (
-            <Text pt="4" color="gray">
-              আপনি {1050} টাকা পে করতে যাচ্ছেন
-            </Text>
-          ) : (
-            <Text pt="4" color="gray">
-              বইয়ের মূল্য ক্যাশ অন ডেলিভারিতে নেয়া যাবে। ডেলিভারি চার্জ {50}{" "}
-              টাকা পে করতে যাচ্ছেন
-            </Text>
-          )}
+          <Text py="10px" h='60px' color="gray">
+            {paymentType === "Full Paid" ? (
+              <>আপনি {1050} টাকা পে করতে যাচ্ছেন</>
+            ) : (
+              <>
+                বইয়ের মূল্য ক্যাশ অন ডেলিভারিতে নেয়া যাবে। ডেলিভারি চার্জ {50}{" "}
+                টাকা পে করতে যাচ্ছেন
+              </>
+            )}
+          </Text>
         </RadioGroup>
         <Divider />
+
+        {/*Select payment gateway bkash-nagad-rocket */}
         <RadioGroup
           name="payment-gateway"
-          mt="5"
+          mt="20px"
           onChange={setPaymentGateway}
           value={paymentGateway}
         >
-          <Stack direction="row" spacing="5">
             <Text fontWeight="bold">Gateway:</Text>
+          <Stack direction="row" spacing="5">
             <Radio value="Bkash">Bkash</Radio>
             <Radio value="Nagad">Nagad</Radio>
             <Radio value="Rocket">Rocket</Radio>
@@ -74,7 +74,9 @@ export const PaymentAndConfirm = () => {
           015 2125 7646
           {paymentGateway === "Rocket" && " 3"}
         </Text>
+        {/* Payment gateway ends here */}
 
+        {/* Sender Number and payment proof details asking */}
         <form onSubmit={(e) => console.log(e.target.value)}>
           <FormControl pt="3">
             <FormLabel htmlFor="last-number">
@@ -87,11 +89,12 @@ export const PaymentAndConfirm = () => {
               placeholder="xxx xxxx 1111"
               isRequired
             />
-            <Button type="submit" size="sm" w="100%" colorScheme="teal" my="2">
+            <Button type="submit" size="sm" w="100%" colorScheme="teal" mt='10px'>
               Confirm Order
             </Button>
           </FormControl>
         </form>
+        {/*Payment proof ends here */}
       </Box>
     </Box>
   );

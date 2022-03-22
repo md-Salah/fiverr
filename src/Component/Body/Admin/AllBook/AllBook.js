@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineFilter } from "react-icons/ai";
-import { TableRow } from "./TableRow";
+import { BookRow } from "../AllBook/BookRow";
 import { FilterBook } from "./FilterBook";
 
 const tableTitles = [
@@ -189,7 +189,7 @@ export const AllBook = () => {
           </Thead>
           <Tbody>
             {BookCollection.map((book) => (
-              <TableRow key={book.id} book={book} tableTitles={tableTitles} />
+              <BookRow key={book.id} book={book} tableTitles={tableTitles} />
             ))}
           </Tbody>
         </Table>        

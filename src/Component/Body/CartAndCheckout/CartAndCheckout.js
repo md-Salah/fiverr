@@ -1,32 +1,58 @@
 import React, { Component } from "react";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
-import { BsWhatsapp } from "react-icons/bs";
-import PopoverData from "../BookDetails/PopoverData";
+import { Box, Divider, Grid, GridItem, MenuDivider } from "@chakra-ui/react";
 // import BookDetailsTemplate from "../BookDetails/BookDetailsTemplate";
 // import ProductCart from "../CartAndCheckout/ProductCart";
 import "../CartAndCheckout/Books/Stylesheet/Books.css";
 // import withRouter from 'react-router'
 import Cart from "../CartAndCheckout/Cart";
-import { SendBookPhoto } from "./SendBookPhoto";
+
 import { PaymentAndConfirm } from "./PaymentAndConfirm";
-// import ShippingDetails from "../Component/ShippingDetails";
+import { SendBookPhoto } from "./SendBookPhoto";
+import ShippingDetails from "./ShippingDetails";
+import PaymentSummary from "./PaymentSummary";
 
 class CartAndCheckout extends Component {
   render() {
     return (
-      <Box h="100vh" pt={{ base: "60px", md: "90px" }}>
-        <Box mx={{ base: "30px", lg: "60px", xl: "90px" }} mt="40px">
-          <Cart />
+      <Box minH="100vh" pt={{ base: "100px", md: "130px" }} bg="#cedeeb">
+        <Grid
+          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+          gap="50px"
+          mx="250px"
+          bg="white"
+        >
+          <GridItem colSpan={{ base: "1", md: "2" }}>
+            <Cart />
+          </GridItem>
 
-          <Grid templateColumns={{base:'repeat(1, 1fr)', md:'repeat(3, 1fr)'}} gap='55px'>
-            <GridItem colSpan={{base: '1', md:'2'}}>
-              <SendBookPhoto />
-            </GridItem>
-            <GridItem>
-              <PaymentAndConfirm />
-            </GridItem>
-          </Grid>
-        </Box>
+          <GridItem mx='20px'>
+            <SendBookPhoto />
+          </GridItem>
+          <GridItem mx='20px'>
+            <PaymentSummary />
+          </GridItem>
+
+          <GridItem colSpan={{ base: "1", md: "2" }}>
+            <Divider />
+          </GridItem>
+        </Grid>
+
+        <Grid
+          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+          gap="50px"
+          mx="250px"
+          mt='40px'
+          bg='white'
+          boxShadow='lg'
+        >
+          <GridItem>
+            <ShippingDetails />
+          </GridItem>
+
+          <GridItem>
+            <PaymentAndConfirm />
+          </GridItem>
+        </Grid>
       </Box>
     );
   }

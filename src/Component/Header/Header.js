@@ -5,18 +5,17 @@ import Search from "../Body/Search";
 
 export default function Header({ children }) {
   return (
-    <Box>
+    <>
       <Box
         w="100%"
         h="50px"
-        bg="teal"
+        bg='white'
         position="fixed"
         top="0"
         zIndex="banner"
         boxShadow='md'
       >
         <Box
-          bg={{ base: "#1d5f73", sm: "none" }}
           h="100%"
           px={{ base: "30px", lg: "60px", xl: "90px" }}
           display={"flex"}
@@ -49,8 +48,7 @@ export default function Header({ children }) {
               w={{ base: "80px", sm: "1000px" }}
               pl={{ base: "20px", sm: "150px", lg: "450px"}}
               pb="0.5px"
-              color="white"
-              fontWeight={"normal"}
+              color='black'
               justifyContent="space-between"
               alignItems={"center"}
             >
@@ -70,7 +68,7 @@ export default function Header({ children }) {
         </Box>
       </Box>
       {children}
-    </Box>
+    </>
   );
 }
 

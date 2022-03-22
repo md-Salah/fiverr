@@ -4,49 +4,68 @@ import {
   Input,
   Button,
   InputGroup,
-  InputLeftElement,
   InputRightAddon,
-  Icon,
-  FormControl,
+  InputLeftAddon,
+  Select,
 } from "@chakra-ui/react";
+import { AutoCompleteInput } from "../GeneralComponent/AutoCompleteInput";
 
-import { SearchIcon } from "@chakra-ui/icons";
+const searchOn = ["বই", "লেখক", "প্রকাশনী", "বিষয়"];
 
 export default function Search(props) {
-  const [value, setValue] = useState("");
+  const [searchKey, setSearchKey] = useState(searchOn[0]);
+  const [searchText, setSearchText] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(value);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchText != "") {
+      if(searchKey === "বই"){
+        //Find searchText on book title
+      }
+    }
   };
 
   return (
-    <Box>
-      <form onSubmit={handleSubmit}>
-        <InputGroup>
-          <InputLeftElement>
-            <Icon as={SearchIcon} />
-          </InputLeftElement>
-          <Input
+    <form onSubmit={handleSearch}>
+      <InputGroup>
+        <InputLeftAddon p="0">
+          <Select
+            onChange={(e) => setSearchKey(e.target.value)}
+            borderRightRadius="0"
             bg="white"
-            variant="outline"
-            type="text"
-            placeholder="Search by Book / Author Name"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <InputRightAddon p="0">
+          >
+            {searchOn.map((key) => (
+              <option key={key} value={key}>
+                {key}
+              </option>
+            ))}
+          </Select>
+        </InputLeftAddon>
+
+        <AutoCompleteInput
+          id='search'
+          type="text"
+          placeholder="Search by Book / Author Name"
+          value={searchText}
+          setValue={setSearchText}
+          options={['Humayun Ahmed', 'Zafor Iqbal', 'Programming']}
+        />
+
+        <InputRightAddon
+          p="0"
+          children={
             <Button
-              type='submit'
+              type="submit"
               borderLeftRadius="none"
-              colorScheme="gray"
-              mx="0"
+              borderRadius="inherit"
+              colorScheme="blue"
+              mr="-1"
             >
               Search
             </Button>
-          </InputRightAddon>
-        </InputGroup>
-        </form>
-    </Box>
+          }
+        />
+      </InputGroup>
+    </form>
   );
 }

@@ -11,7 +11,7 @@ import {
   FormControl,
 } from "@chakra-ui/react";
 
-export const TableRow = ({ book, tableTitles, updateBook }) => {
+export const BookRow = ({ book, tableTitles, updateBook }) => {
   const [bookDetails, setBookDetails] = useState({ ...book });
 
   const [selectedKey, setSelectedKey] = useState(null);

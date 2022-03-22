@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, Stack, Image, Menu, MenuButton, Icon, MenuList, MenuItem, HStack, useNumberInput, Select } from "@chakra-ui/react";
-import ShippingDetails from "../ShippingDetails";
+import ShippingDetails from "./ShippingDetails";
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -31,17 +31,8 @@ function PaymentSummary(props) {
     Payable.Payable = Payable.Total - Payable.Promo;
 
     return (
-        // Checkout section starts here
-        <Box w={{ base: "100%", md: "26%" }} mt={{ base: "20px", md: "initial" }}>
-            <Table variant="striped" size="sm" boxShadow='base'>
-                <Thead bg="#319795">
-                    <Tr fontWeight="bold" bg="#319795">
-                        <Td colSpan="2" textAlign="center" color="white">
-                            Checkout Summary
-                        </Td>
-                    </Tr>
-                </Thead>
-                <Tbody><a href=""></a>
+            <Table variant="striped" size="sm">
+                <Tbody>
                     <Tr>
                         <Td w="70%">SubTotal</Td>
                         <Td w="30%" textAlign="right">
@@ -95,8 +86,6 @@ function PaymentSummary(props) {
                     </Tr>
                 </Tbody>
             </Table>
-            <Box><ShippingDetails /></Box>
-        </Box>
         // Checkout section ends here
     )
 }

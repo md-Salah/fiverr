@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Select, Text } from "@chakra-ui/react";
-import ShowList from "./ShowList";
+import {OrderDetails} from "./OrderDetails";
 import { types } from "./OrderListData";
 
-export const Orders = () => {
+export const OrderList = () => {
   const [type, setType] = useState(types[0]);
 
   return (
@@ -21,7 +21,7 @@ export const Orders = () => {
         ))}
       </Select>
 
-      <ShowList type={type} />
+      <OrderDetails type={type} />
     </Box>
   );
 };

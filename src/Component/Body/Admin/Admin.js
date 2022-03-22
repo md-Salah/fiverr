@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import { Box, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/react";
-import { Orders } from "./OrderList/Orders";
+import { OrderList } from "./OrderList/OrderList";
 import { AllBook } from "./AllBook/AllBook";
 import AddBook from "./AddBook/AddBook.js";
 import { Dashboard } from "./Dashboard/Dashboard";
@@ -10,7 +10,7 @@ export default function Admin() {
     <Box mt="75px" h="100vh" className="container">
       <Tabs>
         <TabList>
-          <Tab>Orders</Tab>
+          <Tab>Order List</Tab>
           <Tab>Add Book</Tab>
           <Tab>All Book</Tab>
           <Tab>Dashboard</Tab>
@@ -18,7 +18,7 @@ export default function Admin() {
 
         <TabPanels>
           <TabPanel>
-            <Orders />
+            <OrderList />
           </TabPanel>
           <TabPanel>
             <AddBook />

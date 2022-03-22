@@ -18,8 +18,8 @@ export const SendBookPhoto = () => {
   const [btn, setBtn] = useBoolean(false);
 
   return (
-    <Box mt="10" boxShadow="base" p="2">
-      <FormControl my="2">
+    <Box mt='5px'>
+      <FormControl my="5px">
         <InputGroup>
           <FormLabel htmlFor="send-photos">
             প্যাকেজিং এর সময় বই গুলোর ছবি দেখতে চাই

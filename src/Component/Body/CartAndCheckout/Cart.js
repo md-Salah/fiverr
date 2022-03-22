@@ -1,25 +1,33 @@
 import React from "react";
-import { Box, Flex, Table, Tbody, Text, Thead, Td, Tr, Input, Button, Checkbox, Stack, Image, Menu, MenuButton, Icon, MenuList, MenuItem, HStack, useNumberInput, Select } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Checkbox,
+  VStack,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import GenerateCart from "../CartAndCheckout/BooksAddedInCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import { CartDetails, updateCartDetails } from "../../../Redux/actionCreators";
-import PaymentSummary from "./PaymentSummary.js";
 
 const mapStateToProps = (State) => {
   return {
     cart: State.cart,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     cartDetails: () => dispatch(CartDetails()),
-    updateCartDetails: (book, isSelected) => dispatch(updateCartDetails(book, isSelected)),
-  }
-}
+    updateCartDetails: (book, isSelected) =>
+      dispatch(updateCartDetails(book, isSelected)),
+  };
+};
 
 function Cart(props) {
   const Payable = {
@@ -44,17 +52,13 @@ function Cart(props) {
     props.cart.map((book) => {
       // console.log(book.isSelected);
       props.updateCartDetails(book, e.target.checked);
-    })
+    });
     setCheckedItems([e.target.checked, e.target.checked]);
-  }
+  };
 
   return (
-    <Flex
-      w="100%"
-      flexDirection={{ base: "column", md: "row" }}
-      justifyContent="space-between"
-    >
-      <Box w={{ base: "100%", md: "70%" }} boxShadow='base'>
+      <Box w='100%' minH="300px" boxShadow="base">
+        {/*Heading of Cart */}
         <Flex
           px="20px"
           bg="#319795"
@@ -82,14 +86,10 @@ function Cart(props) {
           </Box>
         </Flex>
 
+        {/*body of cart showing added books in cart */}
         <GenerateCart isChecked={allChecked} />
-
       </Box>
-
-      <PaymentSummary />
-
-    </Flex>
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
