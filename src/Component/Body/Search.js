@@ -1,34 +1,71 @@
-import React from "react";
-import { Box, Flex, Image, Input, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Box,
+  Input,
+  Button,
+  InputGroup,
+  InputRightAddon,
+  InputLeftAddon,
+  Select,
+} from "@chakra-ui/react";
+import { AutoCompleteInput } from "../GeneralComponent/AutoCompleteInput";
+
+const searchOn = ["বই", "লেখক", "প্রকাশনী", "বিষয়"];
 
 export default function Search(props) {
-  let isNav = props.isNav;
-  
+  const [searchKey, setSearchKey] = useState(searchOn[0]);
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchText != "") {
+      if(searchKey === "বই"){
+        //Find searchText on book title
+      }
+    }
+  };
+
   return (
-    <Flex h={isNav ? "35px" : "40px"} mt={isNav ? 0 : "5px"} justifyContent={{ base: "center", sm: "left" }} mr={isNav ? '70px' : 0}>
-      <Flex bg="white" borderLeftRadius={"5px"} alignItems={"center"}>
-        <Box mx="2" display="flex" alignItems="center">
-          <Image h="20px" src="../../search icon.png" alt="search" />
-        </Box>
-        <Input
-          w={isNav ? { base: "140px", sm: "160px", md: "200px", xl: "300px" } : { base: "180px", sm: "300px", md: "400px", xl: "550px" }}
-          h="inherit"
-          pl="0"
-          mr="10px"
-          variant="Flushed"
-          type={"search"}
-          placeholder="Search by Book or Author Name"
+    <form onSubmit={handleSearch}>
+      <InputGroup>
+        <InputLeftAddon p="0">
+          <Select
+            onChange={(e) => setSearchKey(e.target.value)}
+            borderRightRadius="0"
+            bg="white"
+          >
+            {searchOn.map((key) => (
+              <option key={key} value={key}>
+                {key}
+              </option>
+            ))}
+          </Select>
+        </InputLeftAddon>
+
+        <AutoCompleteInput
+          id='search'
+          type="text"
+          placeholder="Search by Book / Author Name"
+          value={searchText}
+          setValue={setSearchText}
+          options={['Humayun Ahmed', 'Zafor Iqbal', 'Programming']}
         />
-      </Flex>
-      <Button
-        h="inherit"
-        bg='#319795'
-        color="white"
-        borderLeftRadius={"0"}
-        borderRightRadius={"5px"}
-      >
-        Search
-      </Button>
-    </Flex>
+
+        <InputRightAddon
+          p="0"
+          children={
+            <Button
+              type="submit"
+              borderLeftRadius="none"
+              borderRadius="inherit"
+              colorScheme="blue"
+              mr="-1"
+            >
+              Search
+            </Button>
+          }
+        />
+      </InputGroup>
+    </form>
   );
 }

@@ -28,6 +28,8 @@ class Books extends Component {
     let popularBooks = null;
     let bookList = null;
 
+    // console.log(this.props.books);
+
     popularBooks = this.props.books.filter((item) => {
       return item.Popularity === 'high';
     })
@@ -45,6 +47,8 @@ class Books extends Component {
         </Box>
       )
     })
+
+    console.log(bookList);
 
     return (
       <Box h="460px" bg="white">

@@ -101,57 +101,11 @@
       "Edition": "2nd Editor, 2015",
       "Language": "বাংলা",
       "NoOfPages": "75",
-      "Popularity": "low",
+      "Popularity": "high",
       "Condition": "New",
       "priceNew": "100",
       "priceOld": "60",
       "id": 3
-    },
-    {
-      "bookName": "book 4",
-      "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-      "Edition": "2nd Editor, 2015",
-      "Language": "বাংলা",
-      "NoOfPages": "75",
-      "Popularity": "high",
-      "Condition": "New",
-      "priceNew": "100",
-      "priceOld": "40",
-      "id": 4
-    },
-    {
-      "bookName": "book 5",
-      "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
-      "Edition": "2nd Editor, 2015",
-      "Language": "বাংলা",
-      "NoOfPages": "75",
-      "Popularity": "low",
-      "Condition": "New",
-      "priceNew": "100",
-      "priceOld": "60",
-      "id": 5
-    },
-    {
-      "Title": "মন্দ্রসপ্তক",
-      "Author": "হুমায়ূন আহমেদ",
-      "Publisher": "সময়",
-      "Translator": "",
-      "Edition": "1993",
-      "ActualPrice": "80",
-      "SellPrice": "",
-      "DiscountPrice": "",
-      "Qty": "1",
-      "CoverType": "",
-      "PrintQuality": "",
-      "Cost": "40",
-      "NoOfPages": "",
-      "Condition": "",
-      "CategoryTags": "",
-      "DetailsDescription": "",
-      "Notes": "",
-      "id": 6
     }
   ],
   "Cart": [
@@ -197,6 +151,24 @@
       "bookCount": 2,
       "isSelected": true,
       "id": 4
+    },
+    {
+      "bookId": "10-009P",
+      "bookPublisher": "কাকলী প্রকাশনী",
+      "bookCondition": "Old",
+      "bookCover": "HardCover",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 5
+    },
+    {
+      "bookId": "10-009P",
+      "bookPublisher": "কাকলী প্রকাশনী",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 6
     }
   ]
 }
