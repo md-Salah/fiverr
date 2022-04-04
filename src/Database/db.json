@@ -7,6 +7,30 @@
       "ConfirmPassword": "bangladesh",
       "CurrentAddress": "asd",
       "NID": "123234",
+      "Orders": [
+        {
+          "bookId": 1,
+          "bookName": "book 1",
+          "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+          "bookPrice": "100",
+          "bookCondition": "New",
+          "bookCover": "Hard Cover",
+          "bookCount": 2,
+          "isSelected": true,
+          "id": 1
+        },
+        {
+          "bookId": 1,
+          "bookName": "book 1",
+          "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+          "bookPrice": "60",
+          "bookCondition": "Old",
+          "bookCover": "Paperback",
+          "bookCount": 2,
+          "isSelected": true,
+          "id": 2
+        }
+      ],
       "id": 1
     },
     {
