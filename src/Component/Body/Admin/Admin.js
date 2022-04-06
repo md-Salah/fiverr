@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Box, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/react";
 import { OrderList } from "./OrderList/OrderList";
-import { AllBook } from "./AllBook/AllBook";
+import AllBook from "./AllBook/AllBook";
 import AddBook from "./AddBook/AddBook.js";
 import { Dashboard } from "./Dashboard/Dashboard";
 

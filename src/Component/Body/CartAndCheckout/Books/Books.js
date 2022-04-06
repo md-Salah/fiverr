@@ -31,8 +31,10 @@ class Books extends Component {
     // console.log(this.props.books);
 
     popularBooks = this.props.books.filter((item) => {
-      return item.Popularity === 'high';
+      return item.Popularity === 'Popular';
     })
+
+    // console.log(popularBooks);
 
     bookList = popularBooks.map((item) => {
       return (
@@ -40,7 +42,7 @@ class Books extends Component {
           <Book
             id={item.id}
             key={item.id}
-            bookName={item.bookName}
+            bookName={item.Title}
             priceNew={item.priceNew}
             priceOld={item.priceOld}
           />
@@ -48,7 +50,7 @@ class Books extends Component {
       )
     })
 
-    console.log(bookList);
+    // console.log(bookList);
 
     return (
       <Box h="460px" bg="white">
