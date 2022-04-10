@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Image, Button, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Search from "../Body/Search";
+import Search from "../Body/Home/Search";
 
 export default function Header({ children }) {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Divider, Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-import Search from "../../Search";
+import Search from "../Search";
 
 function Banner() {
     const mainTitle = "It's the Possibility of Having a Dream Come True That Makes Life Interesting";

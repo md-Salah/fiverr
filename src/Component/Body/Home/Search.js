@@ -8,7 +8,7 @@ import {
   InputLeftAddon,
   Select,
 } from "@chakra-ui/react";
-import { AutoCompleteInput } from "../GeneralComponent/AutoCompleteInput";
+import { AutoCompleteInput } from "../../GeneralComponent/AutoCompleteInput";
 
 const searchOn = ["বই", "লেখক", "প্রকাশনী", "বিষয়"];
 

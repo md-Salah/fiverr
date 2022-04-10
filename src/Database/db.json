@@ -155,7 +155,7 @@
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCover": "Hard Cover",
-      "bookCount": 2,
+      "bookCount": 1,
       "isSelected": true,
       "id": 1
     },
@@ -166,7 +166,7 @@
       "bookPrice": "60",
       "bookCondition": "Old",
       "bookCover": "Paperback",
-      "bookCount": 2,
+      "bookCount": 1,
       "isSelected": true,
       "id": 2
     },
@@ -187,7 +187,7 @@
       "bookPrice": "40",
       "bookCondition": "Old",
       "bookCover": "Paperback",
-      "bookCount": 2,
+      "bookCount": 1,
       "isSelected": true,
       "id": 4
     },
@@ -217,7 +217,7 @@
       "bookCondition": "New",
       "bookCover": "Hard Cover",
       "bookCount": 1,
-      "isSelected": false,
+      "isSelected": true,
       "id": 7
     },
     {
@@ -228,7 +228,7 @@
       "bookCondition": "New",
       "bookCover": "Hard Cover",
       "bookCount": 1,
-      "isSelected": false,
+      "isSelected": true,
       "id": 8
     },
     {
@@ -239,7 +239,7 @@
       "bookCondition": "Old",
       "bookCover": "Paperback",
       "bookCount": 1,
-      "isSelected": false,
+      "isSelected": true,
       "id": 9
     }
   ]
