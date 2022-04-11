@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import PopoverData from "./PopoverData";
-import BookDetailsTemplate from './BookDetailsTemplate/BookDetailsTemplate';
 import { Component } from "react";
 import { connect } from "react-redux";
 // import ProductCart from "../CartAndCheckout/ProductCart";
 // import "../CartAndCheckout/ProductCart.css";
 import { booksCollection } from "../../../Redux/actionCreators";
+import { BookDescription } from "./BookDescription/BookDescription";
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -35,8 +34,8 @@ class BookDetails extends Component {
 
         return (
             <Box h="100vh" pt='67px'>
-                <PopoverData />
-                <BookDetailsTemplate selectedBook={selectedBook} />
+                <BookDescription book={selectedBook} />
+                {/* <BookDetailsTemplate selectedBook={selectedBook} /> */}
                 {/* <Box
                 className="Shadow"
                 mt="50px"

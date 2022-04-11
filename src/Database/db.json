@@ -93,7 +93,7 @@
       "bookCondition": "New",
       "bookCover": "Hard Cover",
       "bookCount": 2,
-      "isSelected": true,
+      "isSelected": false,
       "id": 1
     },
     {
@@ -104,7 +104,7 @@
       "bookCondition": "Old",
       "bookCover": "Paperback",
       "bookCount": 2,
-      "isSelected": true,
+      "isSelected": false,
       "id": 2
     },
     {
@@ -114,7 +114,7 @@
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCount": 1,
-      "isSelected": true,
+      "isSelected": false,
       "id": 3
     },
     {
@@ -125,7 +125,7 @@
       "bookCondition": "Old",
       "bookCover": "Paperback",
       "bookCount": 2,
-      "isSelected": true,
+      "isSelected": false,
       "id": 4
     },
     {
@@ -145,6 +145,50 @@
       "bookCount": 1,
       "isSelected": false,
       "id": 6
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "60",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 7
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "100",
+      "bookCondition": "New",
+      "bookCover": "Hard Cover",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 8
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "60",
+      "bookCondition": "Old",
+      "bookCover": "Paperback",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 9
+    },
+    {
+      "bookId": 1,
+      "bookName": "book 1",
+      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
+      "bookPrice": "100",
+      "bookCondition": "New",
+      "bookCover": "Hard Cover",
+      "bookCount": 1,
+      "isSelected": false,
+      "id": 10
     }
   ]
 }
