@@ -34,7 +34,7 @@ class BookDetails extends Component {
 
         return (
             <Box h="100vh" pt='67px'>
-                <BookDescription book={selectedBook} />
+                <BookDescription />
                 {/* <BookDetailsTemplate selectedBook={selectedBook} /> */}
                 {/* <Box
                 className="Shadow"
