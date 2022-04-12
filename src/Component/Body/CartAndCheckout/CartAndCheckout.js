@@ -5,7 +5,6 @@ import { Box, Divider, Grid, GridItem, MenuDivider } from "@chakra-ui/react";
 import "../CartAndCheckout/Books/Stylesheet/Books.css";
 // import withRouter from 'react-router'
 import Cart from "../CartAndCheckout/Cart";
-
 import { PaymentAndConfirm } from "./PaymentAndConfirm";
 import { SendBookPhoto } from "./SendBookPhoto";
 import ShippingDetails from "./ShippingDetails";
@@ -37,7 +36,9 @@ class CartAndCheckout extends Component {
           </GridItem>
         </Grid>
 
-        <Grid
+        <ShippingDetails />
+
+        {/* <Grid
           templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
           gap="50px"
           mx="250px"
@@ -52,7 +53,7 @@ class CartAndCheckout extends Component {
           <GridItem>
             <PaymentAndConfirm />
           </GridItem>
-        </Grid>
+        </Grid> */}
       </Box>
     );
   }

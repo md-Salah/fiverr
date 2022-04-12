@@ -242,5 +242,19 @@
       "isSelected": true,
       "id": 9
     }
+  ],
+  "ShippingAndOrderDetails": [
+    {
+      "name": "Sudipta Saha Niloy",
+      "email": "niloy305968@gmail.com",
+      "phoneNumber": "01749450739",
+      "address": "Rouzan, Pahartoli, Chittagong",
+      "district": "",
+      "thana": "",
+      "paymentType": "FullPaid",
+      "paymentGateway": "Bkash",
+      "senderNumber": "01749450739",
+      "id": 1
+    }
   ]
 }
