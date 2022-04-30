@@ -53,30 +53,24 @@ class Books extends Component {
     // console.log(bookList);
 
     return (
-      <Box h="460px" bg="white">
-        <Box>
+      <Box h="460px" bg="white" boxShadow='md' my='20px' p='10px'>
           <Heading
-            mb="20px"
-            pt="25px"
-            color={"black"}
-            fontWeight={"medium"}
+            my="10px"
+            color='text'
+            fontWeight='md'
             fontSize={{ base: "lg", md: "30" }}
             textAlign={{ base: "center", md: "left" }}
-            fontFamily={"Mina"}
-            letterSpacing={"wider"}
+            letterSpacing='wider'
           >
             {this.props.title}
           </Heading>
 
           <Flex
-            w="100%"
-            h="100%"
             bg='white'
             justifyContent={{ base: "center", sm: "space-between" }}
           >
             {bookList}
           </Flex>
-        </Box>
       </Box>
     )
   }

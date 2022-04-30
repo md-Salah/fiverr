@@ -60,7 +60,7 @@ export default function SearchBar(props) {
                 type="submit"
                 borderLeftRadius="none"
                 borderRadius="inherit"
-                colorScheme="blue"
+                colorScheme="teal"
                 mr="-1"
               >
                 Search

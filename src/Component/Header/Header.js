@@ -1,71 +1,118 @@
 import React from "react";
-import { Box, Flex, Image, Button, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  Button,
+  Text,
+  Stack,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  DrawerHeader,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { HamburgerIcon, Icon } from "@chakra-ui/icons";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+
 import SearchBar from "../Body/Search/SearchBar";
+import MainContainer from "../GeneralComponent/MainContainer";
 
 export default function Header({ children }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Box
         w="100%"
         h="50px"
-        bg='white'
+        bg="header"
         position="fixed"
         top="0"
         zIndex="banner"
-        boxShadow='md'
+        boxShadow="md"
       >
-        <Box
-          h="100%"
-          px={{ base: "30px", lg: "60px", xl: "90px" }}
-          display={"flex"}
-          alignItems={"center"}
-        >
+        <MainContainer>
           <Flex
-            mx="auto"
             w="100%"
-            h="35px"
-            justifyContent={"space-between"}
-            alignItems={"center"}
+            h="100%"
+            justifyContent="space-between"
+            alignItems="center"
           >
-            <Image
-              display={{ xl: "none" }}
-              mr="2"
-              maxW="6"
-              src="../../menu.png"
-              alt="Menu"
+            {/* Hamburger Drawer for Mobile display */}
+            <Icon
+              as={HamburgerIcon}
+              boxSize="25px"
+              onClick={onOpen}
+              display={{ base: "flex", lg: "none" }}
             />
+            <Drawer placement="left" isOpen={isOpen} onClose={onClose}>
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Login or Name</DrawerHeader>
+                <DrawerBody>
+                  <Stack direction="column" fontWeight="bold" gap="3">
+                    {NavbarText("Popular Genre", "/")}
+                    {NavbarText("Author", "/")}
+                    {NavbarText("Publisher", "/")}
+                    {NavbarText("Sign In", "/")}
+                  </Stack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+            {/* Hamburger Menu end */}
+
+            {/* Company Logo */}
             <Link to="/">
-              <Image
+              {/* <Image
                 maxW={{ base: "170px", sm: "130px", xl: "150px" }}
                 mt="0.5"
                 ml={{ base: "30px", sm: "0" }}
                 src="../../Logo.png"
-              />
+              /> */}
+              <Text fontSize="lg" mt="5px" fontWeight="bold" color="teal">
+                Pathok Point
+              </Text>
             </Link>
+            {/* Logo ends here */}
 
-            <Flex
-              w={{ base: "80px", sm: "1000px" }}
-              pl={{ base: "20px", sm: "150px", lg: "450px"}}
-              pb="0.5px"
-              color='black'
-              justifyContent="space-between"
-              alignItems={"center"}
-            >
-              {/* <Search isNav={true} /> */}
-              {NavbarText("Popular Genre", "/")}
-              {NavbarText("Author", "/")}
-              {NavbarText("Publisher", "/")}
-              {NavbarText("Sign In", "/")}
+            <Flex alignItems="center">
+              {/* Navigation Links */}
+              <Stack
+                direction="row"
+                display={{ base: "none", lg: "flex" }}
+                gap="7"
+              >
+                {NavbarText("Popular Genre", "/")}
+                {NavbarText("Author", "/")}
+                {NavbarText("Publisher", "/")}
+                {NavbarText("Sign In", "/")}
+              </Stack>
+              {/* Navigation Links ends */}
 
+              {/* Cart Icon */}
               <Link to="/CheckOut">
-                <Flex h="40px" w="35px" pb="5px">
-                  <Image src="../../cart.png" alt="V" />
-                </Flex>
+                <Icon
+                  ml="30px"
+                  mt="4px"
+                  boxSize="25px"
+                  _hover={{ color: "link" }}
+                  as={HiOutlineShoppingCart}
+                />
               </Link>
+              {/* Cart Icon ends here */}
             </Flex>
           </Flex>
-        </Box>
+        </MainContainer>
       </Box>
       {children}
     </>
@@ -74,11 +121,10 @@ export default function Header({ children }) {
 
 function NavbarText(text, link) {
   return (
-    <Link
-      to={link}
-      display={{ base: "none", lg: "initial" }}
-    >
-      {text}
+    <Link to={link}>
+      <Text color="text" _hover={{ color: "link" }}>
+        {text}
+      </Text>
     </Link>
   );
 }

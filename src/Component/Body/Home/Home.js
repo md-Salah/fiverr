@@ -3,35 +3,19 @@ import { Box } from "@chakra-ui/react";
 import Books from "../CartAndCheckout/Books/Books";
 import Banner from "./Banner/Banner";
 import "../CartAndCheckout/Books/Stylesheet/Books.css";
+import MainContainer from "../../GeneralComponent/MainContainer";
 
 export default function Home() {
-    return (
-        <Box h="100vh">
-            <Banner />
-            <Box
-                className="Shadow"
-                mt="50px"
-                mx={{ base: "30px", lg: "60px", xl: "90px" }}
-            >
-                <Books title="Popular Books" />
-            </Box>
+  return (
+    <Box h="100vh">
+      <Banner />
+      <MainContainer>
+        <Books title="Popular Books" />
 
-            <Box
-                className="Shadow"
-                mt="50px"
-                mx={{ base: "30px", lg: "60px", xl: "90px" }}
-            >
-                <Books title="English Original Print Books" />
-            </Box>
+        <Books title="English Original Print Books" />
 
-            {/* <Box
-                className="Shadow"
-                mt="50px"
-                mx={{ base: "30px", lg: "60px", xl: "90px" }}
-            >
-                <ProductCart title="Suggestion Based On Your Likes" />
-            </Box> */}
-        </Box>
-    );
+        {/* <ProductCart title="Suggestion Based On Your Likes" /> */}
+      </MainContainer>
+    </Box>
+  );
 }
-

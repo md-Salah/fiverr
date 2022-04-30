@@ -64,6 +64,7 @@ export const AutoCompleteInput = ({
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
+        px='5px'
       />
 
       {suggestion.length > 0 && (

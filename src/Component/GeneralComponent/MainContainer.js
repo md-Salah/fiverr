@@ -3,7 +3,7 @@ import React from 'react'
 
 const MainContainer = ({children}) => {
   return (
-    <Box mx={['30px', '60px', '120px', '150px']}>
+    <Box mx={['20px', '30px', '60px', '150px']} h='inherit'>
         {children}
     </Box>
   )
