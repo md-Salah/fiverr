@@ -91,7 +91,7 @@ export const BookDescription = () => {
         borderBottom="1px solid #999"
       >
         {/* Image and share icons start */}
-        <GridItem maxW="250px">
+        <GridItem maxW="250px" colSpan={{base: '4', lg:'1'}}>
           <Image src={book.url} alt="Book Img" maxH="400px" w="100%" />
 
           {/* Share icons start here */}
@@ -110,7 +110,7 @@ export const BookDescription = () => {
         {/* Image and Share icons end */}
 
         {/* Title, select cover, print & condition selection part start */}
-        <GridItem colSpan="2" borderRight="1px solid #999">
+        <GridItem colSpan={{base: '4', lg: '2'}} borderRight="1px solid #999">
           <Text fontSize="lg" fontWeight="bold">
             {book.title}
           </Text>
@@ -203,7 +203,7 @@ export const BookDescription = () => {
         {/* Title, select cover, print & condition selection part ends */}
 
         {/* Selected informations and Add to Cart starts here */}
-        <GridItem>
+        <GridItem colSpan={{base: '4', lg: '1'}}>
           <Text fontSize="lg">Selected</Text>
           <Flex mt="10px">
             <Text mr="5px">Cover:</Text>

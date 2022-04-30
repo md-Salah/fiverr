@@ -172,7 +172,7 @@ function AddBook(props) {
       }}
 
       onSubmit={(values) => {
-        console.log(values);
+        // console.log(values);
         props.bookInput(values);
       }}
     >

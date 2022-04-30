@@ -1,21 +1,23 @@
-import React, { Component } from "react";
-import {
-  Box,
-  Text,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  IconButton,
-  ButtonGroup,
-  Tooltip,
-  Flex,
-} from "@chakra-ui/react";
+import React, { Component, useEffect } from "react";
+import { Box, Text, Table, Thead, Tr, Th, Tbody, IconButton, ButtonGroup, Tooltip, Flex } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineFilter } from "react-icons/ai";
 import { BookRow } from "../AllBook/BookRow";
 import { FilterBook } from "./FilterBook";
+import { booksCollection } from "../../../../Redux/actionCreators";
+import { connect } from 'react-redux';
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    booksCollection: () => dispatch(booksCollection()),
+  }
+}
+
+const mapStateToProps = (State) => {
+  return {
+    books: State.booksCollection,
+  }
+}
 
 const tableTitles = [
   { name: "Image" },
@@ -30,7 +32,7 @@ const tableTitles = [
   { name: "Discount Price" },
   { name: "Cost" },
   { name: "Qty" },
-  { name: "Cover", wide:"110px", inputType: "Select", options: ["Hard Cover", "Paper back"] },
+  { name: "Cover", wide: "110px", inputType: "Select", options: ["Hard Cover", "Paper back"] },
   { name: "Print Quality" },
   { name: "Condition", inputType: "Select", options: ["Old", "New"] },
   { name: "Total Page" },
@@ -50,100 +52,106 @@ const tableTitles = [
   { name: "id" },
 ];
 
-const BookCollection = [
-  {
-    Image: "#",
-    Title: "বাদশাহ নামদার",
-    Author: "হুমায়ূন আহমেদ",
-    Publisher: "বিশ্বসাহিত্য কেন্দ্র",
-    Translator: "মোতাহের হোসেন চৌধুরী",
-    "Publica. Year": "2012",
-    Edition: "2nd Editor, 2015",
-    "Printed Price": "300",
-    "Sell Price": "160",
-    "Discount Price": "140",
-    Cost: "50",
-    Qty: "20",
-    Cover: "Hard Cover",
-    "Print Quality": "",
-    Condition: "Old",
-    "Total Page": "98",
-    "Category Tags": ["War", "History", "Biography"],
-    Summary:
-      "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
-    Notes:
-      "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
-    Country: "Bangladesh",
-    Language: "Bangla",
-    ISBN: "01155787414",
-    Popularity: "Popular",
-    Rating: "5",
-    Review: "7 people reviewed",
-    id: "144555",
-  },
-  {
-    Image: "#",
-    Title: "বাদশাহ নামদার",
-    Author: "হুমায়ূন আহমেদ",
-    Publisher: "বিশ্বসাহিত্য কেন্দ্র",
-    Translator: "মোতাহের হোসেন চৌধুরী",
-    "Publica. Year": "2012",
-    Edition: "2nd Editor, 2015",
-    "Printed Price": "300",
-    "Sell Price": "160",
-    "Discount Price": "140",
-    Cost: "50",
-    Qty: "20",
-    Cover: "Hard Cover",
-    "Print Quality": "",
-    Condition: "Old",
-    "Total Page": "98",
-    "Category Tags": ["War", "History", "Biography"],
-    Summary:
-      "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
-    Notes:
-      "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
-    Country: "Bangladesh",
-    Language: "Bangla",
-    ISBN: "01155787414",
-    Popularity: "Popular",
-    Rating: "5",
-    Review: "7 people reviewed",
-    id: "1588",
-  },
-  {
-    Image: "#",
-    Title: "বাদশাহ নামদার",
-    Author: "হুমায়ূন আহমেদ",
-    Publisher: "বিশ্বসাহিত্য কেন্দ্র",
-    Translator: "মোতাহের হোসেন চৌধুরী",
-    "Publica. Year": "2012",
-    Edition: "2nd Editor, 2015",
-    "Printed Price": "300",
-    "Sell Price": "160",
-    "Discount Price": "140",
-    Cost: "50",
-    Qty: "20",
-    Cover: "Hard Cover",
-    "Print Quality": "",
-    Condition: "Old",
-    "Total Page": "98",
-    "Category Tags": ["War", "History", "Biography"],
-    Summary:
-      "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
-    Notes:
-      "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
-    Country: "Bangladesh",
-    Language: "Bangla",
-    ISBN: "01155787414",
-    Popularity: "Popular",
-    Rating: "5",
-    Review: "7 people reviewed",
-    id: "745",
-  },
-];
+// const BookCollection = [
+//   {
+//     Image: "#",
+//     Title: "বাদশাহ নামদার",
+//     Author: "হুমায়ূন আহমেদ",
+//     Publisher: "বিশ্বসাহিত্য কেন্দ্র",
+//     Translator: "মোতাহের হোসেন চৌধুরী",
+//     "Publica. Year": "2012",
+//     Edition: "2nd Editor, 2015",
+//     "Printed Price": "300",
+//     "Sell Price": "160",
+//     "Discount Price": "140",
+//     Cost: "50",
+//     Qty: "20",
+//     Cover: "Hard Cover",
+//     "Print Quality": "",
+//     Condition: "Old",
+//     "Total Page": "98",
+//     "Category Tags": ["War", "History", "Biography"],
+//     Summary:
+//       "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
+//     Notes:
+//       "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
+//     Country: "Bangladesh",
+//     Language: "Bangla",
+//     ISBN: "01155787414",
+//     Popularity: "Popular",
+//     Rating: "5",
+//     Review: "7 people reviewed",
+//     id: "144555",
+//   },
+//   {
+//     Image: "#",
+//     Title: "বাদশাহ নামদার",
+//     Author: "হুমায়ূন আহমেদ",
+//     Publisher: "বিশ্বসাহিত্য কেন্দ্র",
+//     Translator: "মোতাহের হোসেন চৌধুরী",
+//     "Publica. Year": "2012",
+//     Edition: "2nd Editor, 2015",
+//     "Printed Price": "300",
+//     "Sell Price": "160",
+//     "Discount Price": "140",
+//     Cost: "50",
+//     Qty: "20",
+//     Cover: "Hard Cover",
+//     "Print Quality": "",
+//     Condition: "Old",
+//     "Total Page": "98",
+//     "Category Tags": ["War", "History", "Biography"],
+//     Summary:
+//       "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
+//     Notes:
+//       "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
+//     Country: "Bangladesh",
+//     Language: "Bangla",
+//     ISBN: "01155787414",
+//     Popularity: "Popular",
+//     Rating: "5",
+//     Review: "7 people reviewed",
+//     id: "1588",
+//   },
+//   {
+//     Image: "#",
+//     Title: "বাদশাহ নামদার",
+//     Author: "হুমায়ূন আহমেদ",
+//     Publisher: "বিশ্বসাহিত্য কেন্দ্র",
+//     Translator: "মোতাহের হোসেন চৌধুরী",
+//     "Publica. Year": "2012",
+//     Edition: "2nd Editor, 2015",
+//     "Printed Price": "300",
+//     "Sell Price": "160",
+//     "Discount Price": "140",
+//     Cost: "50",
+//     Qty: "20",
+//     Cover: "Hard Cover",
+//     "Print Quality": "",
+//     Condition: "Old",
+//     "Total Page": "98",
+//     "Category Tags": ["War", "History", "Biography"],
+//     Summary:
+//       "দর আইনা গরচে খুদ নুমাই বাশদ পৈবস্তা জ খেশতন জুদাই বাশদ। খুদ রা ব মিসলে গোর দীদন অজব অস্ত; ঈ বুল অজবো কারে খুদাই বাশদ। যদিও দর্পণে আপন চেহারা দেখা যায় কিন্তু তা পৃথক থাকে নিজে নিজেকে অন্যরুপে দেখা আশ্চর্যের ব্যাপার।",
+//     Notes:
+//       "অর্ডার করলেই নিশ্চিত ১টি NESCAFE 3 in 1 এবং ৬৯৯৳+ অর্ডারে নিশ্চিত ১টি Chopstick noodles ফ্রি!",
+//     Country: "Bangladesh",
+//     Language: "Bangla",
+//     ISBN: "01155787414",
+//     Popularity: "Popular",
+//     Rating: "5",
+//     Review: "7 people reviewed",
+//     id: "745",
+//   },
+// ];
 
-export const AllBook = () => {
+class AllBook extends Component {
+  componentDidMount() {
+    this.props.booksCollection();
+  }
+
+  render() {
+    // console.log(this.props.books);
     return (
       <Box
         w="100%"
@@ -188,11 +196,14 @@ export const AllBook = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {BookCollection.map((book) => (
+            {this.props.books.map((book) => (
               <BookRow key={book.id} book={book} tableTitles={tableTitles} />
             ))}
           </Tbody>
-        </Table>        
+        </Table>
       </Box>
     );
   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllBook);

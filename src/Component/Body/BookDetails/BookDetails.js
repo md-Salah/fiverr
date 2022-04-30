@@ -32,6 +32,8 @@ class BookDetails extends Component {
             return item.id === state[0].id;
         })
 
+        console.log(selectedBook);
+
         return (
             <Box h="100vh" pt='67px'>
                 <BookDescription />
@@ -51,7 +53,7 @@ class BookDetails extends Component {
                 <ProductCart title="Horro Collection" />
             </Box> */}
             </Box>
-            
+
         );
     }
 }

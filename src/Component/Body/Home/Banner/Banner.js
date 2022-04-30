@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Divider, Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-import Search from "../../Search";
+import SearchBar from "../../Search/SearchBar";
 
 function Banner() {
     const mainTitle = "It's the Possibility of Having a Dream Come True That Makes Life Interesting";
@@ -42,7 +42,7 @@ function Banner() {
                     >
                         - {author}
                     </Text>
-                    <Search data={"books data will be passed"} />
+                    <SearchBar data={"books data will be passed"} />
                 </Box>
             </Box>
         </Box>

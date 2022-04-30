@@ -8,18 +8,19 @@ import {
   InputLeftAddon,
   Select,
 } from "@chakra-ui/react";
-import { AutoCompleteInput } from "../GeneralComponent/AutoCompleteInput";
+import { AutoCompleteInput } from "../../GeneralComponent/AutoCompleteInput";
+import { Link } from "react-router-dom";
 
 const searchOn = ["বই", "লেখক", "প্রকাশনী", "বিষয়"];
 
-export default function Search(props) {
+export default function SearchBar(props) {
   const [searchKey, setSearchKey] = useState(searchOn[0]);
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchText != "") {
-      if(searchKey === "বই"){
+      if (searchKey === "বই") {
         //Find searchText on book title
       }
     }
@@ -43,26 +44,28 @@ export default function Search(props) {
         </InputLeftAddon>
 
         <AutoCompleteInput
-          id='search'
+          id="search"
           type="text"
           placeholder="Search by Book / Author Name"
           value={searchText}
           setValue={setSearchText}
-          options={['Humayun Ahmed', 'Zafor Iqbal', 'Programming']}
+          options={["Humayun Ahmed", "Zafor Iqbal", "Programming"]}
         />
 
         <InputRightAddon
           p="0"
           children={
-            <Button
-              type="submit"
-              borderLeftRadius="none"
-              borderRadius="inherit"
-              colorScheme="blue"
-              mr="-1"
-            >
-              Search
-            </Button>
+            <Link to='/Search'>
+              <Button
+                type="submit"
+                borderLeftRadius="none"
+                borderRadius="inherit"
+                colorScheme="blue"
+                mr="-1"
+              >
+                Search
+              </Button>
+            </Link>
           }
         />
       </InputGroup>

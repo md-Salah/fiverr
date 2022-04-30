@@ -1,19 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Divider,
-  Input,
-  InputGroup,
-  Radio,
-  RadioGroup,
-  Stack,
-  Text,
-  FormLabel,
-  FormHelperText,
-  FormControl,
-  Heading,
-} from "@chakra-ui/react";
+import { Box, Button, Divider, Input, InputGroup, Radio, RadioGroup, Stack, Text, FormLabel, FormHelperText, FormControl, Heading } from "@chakra-ui/react";
 
 export const PaymentAndConfirm = () => {
   const [paymentType, setPaymentType] = useState("Full Paid");
@@ -59,7 +45,7 @@ export const PaymentAndConfirm = () => {
           onChange={setPaymentGateway}
           value={paymentGateway}
         >
-            <Text fontWeight="bold">Gateway:</Text>
+          <Text fontWeight="bold">Gateway:</Text>
           <Stack direction="row" spacing="5">
             <Radio value="Bkash">Bkash</Radio>
             <Radio value="Nagad">Nagad</Radio>

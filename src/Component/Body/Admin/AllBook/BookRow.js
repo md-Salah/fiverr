@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Tr,
-  Tooltip,
-  Text,
-  Td,
-  Input,
-  Button,
-  Circle,
-  Select,
-  FormControl,
-} from "@chakra-ui/react";
+import {Tr,Tooltip,Text,Td,Input,Button,Circle,Select,FormControl} from "@chakra-ui/react";
 
 export const BookRow = ({ book, tableTitles, updateBook }) => {
   const [bookDetails, setBookDetails] = useState({ ...book });
