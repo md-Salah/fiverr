@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 
 export const AutoCompleteInput = ({
+  variant="flushed",
   size = "md",
-  id,
   label = "",
   value = "",
   setValue,
@@ -49,7 +49,7 @@ export const AutoCompleteInput = ({
   return (
     <FormControl isInvalid={false} isRequired>
       {label && (
-        <FormLabel mb="0" htmlFor={id}>
+        <FormLabel mb="0">
           {label + ":"}
         </FormLabel>
       )}
@@ -59,12 +59,12 @@ export const AutoCompleteInput = ({
         bg='white'
         placeholder={placeholder}
         type="text"
-        variant="flushed"
-        id={id}
+        variant={variant}
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
-        px='5px'
+        p='5px'
+        borderRadius='none'
       />
 
       {suggestion.length > 0 && (
@@ -74,7 +74,7 @@ export const AutoCompleteInput = ({
           position="absolute"
           w="100%"
           zIndex="2"
-          bg="whiteAlpha.700"
+          bg="white"
         >
           {suggestion.map((item, i) => (
             <ListItem
@@ -84,7 +84,7 @@ export const AutoCompleteInput = ({
               p="2px"
               pl="5px"
               cursor="pointer"
-              _hover={{ bg: "#008080", color:'#fff' }}
+              _hover={{ bg: "teal", color:'white' }}
               onClick={() => onSelect(item)}
             >
               {item}

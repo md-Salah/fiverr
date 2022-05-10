@@ -5,7 +5,8 @@ export const customTheme = extendTheme({
       header: '#ffffff',
       page: '#f2f4f8',
       text: '#1c1c19',
-      link: "#ef522d",
+      subHeading: '#707e80',
+      link: "teal",
       
 
 

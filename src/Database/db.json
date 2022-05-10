@@ -155,13 +155,8 @@
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCover": "Hard Cover",
-<<<<<<< HEAD
-      "bookCount": 2,
-      "isSelected": false,
-=======
       "bookCount": 1,
       "isSelected": true,
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
       "id": 1
     },
     {
@@ -171,13 +166,8 @@
       "bookPrice": "60",
       "bookCondition": "Old",
       "bookCover": "Paperback",
-<<<<<<< HEAD
-      "bookCount": 2,
-      "isSelected": false,
-=======
       "bookCount": 1,
       "isSelected": true,
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
       "id": 2
     },
     {
@@ -197,13 +187,8 @@
       "bookPrice": "40",
       "bookCondition": "Old",
       "bookCover": "Paperback",
-<<<<<<< HEAD
-      "bookCount": 2,
-      "isSelected": false,
-=======
       "bookCount": 1,
       "isSelected": true,
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
       "id": 4
     },
     {
@@ -228,19 +213,11 @@
       "bookId": 1,
       "bookName": "book 1",
       "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
-<<<<<<< HEAD
-      "bookPrice": "60",
-      "bookCondition": "Old",
-      "bookCover": "Paperback",
-      "bookCount": 1,
-      "isSelected": false,
-=======
       "bookPrice": "100",
       "bookCondition": "New",
       "bookCover": "Hard Cover",
       "bookCount": 1,
       "isSelected": true,
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
       "id": 7
     },
     {
@@ -251,41 +228,17 @@
       "bookCondition": "New",
       "bookCover": "Hard Cover",
       "bookCount": 1,
-<<<<<<< HEAD
-      "isSelected": false,
-      "id": 8
-    },
-    {
-      "bookId": 1,
-      "bookName": "book 1",
-=======
       "isSelected": true,
       "id": 8
     },
     {
       "bookId": 3,
       "bookName": "book 3",
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
       "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
       "bookPrice": "60",
       "bookCondition": "Old",
       "bookCover": "Paperback",
       "bookCount": 1,
-<<<<<<< HEAD
-      "isSelected": false,
-      "id": 9
-    },
-    {
-      "bookId": 1,
-      "bookName": "book 1",
-      "bookPublisher": "বিশ্বসাহিত্য কেন্দ্র",
-      "bookPrice": "100",
-      "bookCondition": "New",
-      "bookCover": "Hard Cover",
-      "bookCount": 1,
-      "isSelected": false,
-      "id": 10
-=======
       "isSelected": true,
       "id": 9
     }
@@ -302,7 +255,6 @@
       "paymentGateway": "Bkash",
       "senderNumber": "01749450739",
       "id": 1
->>>>>>> 8410c578fe8ee8809b05a3910f0a890e7147ea93
     }
   ]
 }

@@ -4,11 +4,13 @@ import Books from "../CartAndCheckout/Books/Books";
 import Banner from "./Banner/Banner";
 import "../CartAndCheckout/Books/Stylesheet/Books.css";
 import MainContainer from "../../GeneralComponent/MainContainer";
+import OurServices from "./OurServices/OurServices";
 
 export default function Home() {
   return (
     <Box h="100vh">
       <Banner />
+      <OurServices />
       <MainContainer>
         <Books title="Popular Books" />
 

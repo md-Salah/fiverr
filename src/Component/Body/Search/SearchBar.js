@@ -1,74 +1,48 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Input,
-  Button,
-  InputGroup,
-  InputRightAddon,
-  InputLeftAddon,
-  Select,
-} from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import { AutoCompleteInput } from "../../GeneralComponent/AutoCompleteInput";
 import { Link } from "react-router-dom";
 
-const searchOn = ["বই", "লেখক", "প্রকাশনী", "বিষয়"];
-
-export default function SearchBar(props) {
-  const [searchKey, setSearchKey] = useState(searchOn[0]);
+export default function SearchBar({ size = "sm" }) {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchText != "") {
-      if (searchKey === "বই") {
-        //Find searchText on book title
-      }
+      //Find searchText on book title
     }
   };
 
   return (
     <form onSubmit={handleSearch}>
-      <InputGroup>
-        <InputLeftAddon p="0">
-          <Select
-            onChange={(e) => setSearchKey(e.target.value)}
-            borderRightRadius="0"
-            bg="white"
-          >
-            {searchOn.map((key) => (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            ))}
-          </Select>
-        </InputLeftAddon>
-
+      <Flex
+        p="5px"
+        bg="white"
+        alignItems="center"
+        w={["100%", "100%", "300px", "400px"]}
+        boxShadow="base"
+        borderRadius="sm"
+      >
         <AutoCompleteInput
-          id="search"
-          type="text"
+          size={size}
+          variant="unstyled"
           placeholder="Search by Book / Author Name"
           value={searchText}
           setValue={setSearchText}
           options={["Humayun Ahmed", "Zafor Iqbal", "Programming"]}
         />
 
-        <InputRightAddon
-          p="0"
-          children={
-            <Link to='/Search'>
-              <Button
-                type="submit"
-                borderLeftRadius="none"
-                borderRadius="inherit"
-                colorScheme="teal"
-                mr="-1"
-              >
-                Search
-              </Button>
-            </Link>
-          }
-        />
-      </InputGroup>
+        <Link to="/Search">
+          <Button
+            size={size}
+            type="submit"
+            borderRadius="none"
+            colorScheme="teal"
+          >
+            Search
+          </Button>
+        </Link>
+      </Flex>
     </form>
   );
 }

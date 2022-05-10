@@ -43,7 +43,7 @@ function Banner() {
                     >
                         - {author}
                     </Text>
-                    <SearchBar data={"books data will be passed"} />
+                    {/* <SearchBar /> */}
                 </Box>
             </MainContainer>
         </Box>
