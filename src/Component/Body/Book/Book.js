@@ -1,59 +1,118 @@
-import React, { Component } from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Image, Grid, GridItem, Button, Heading, LinkBox, LinkOverlay, } from "@chakra-ui/react";
+import { Box, Text, Image, Button, VStack, Tag, TagLabel } from "@chakra-ui/react";
 
-class Book extends Component {
-    handleOnClick = (book) => {
-        // console.log(book);
-    }
+export const Book = ({
+  id,
+  key,
+  bookName,
+  author = "Humayun ahmed",
+  priceNew = "120",
+  priceOld = "50",
+}) => {
+  const handleOnClick = () => {};
 
-    render() {
-        return (
-            <Link to={{
-                pathname: "/BookDetails",
-                state: [{ id: this.props.id }]
-            }}>
-                <Box
-                    h="340px"
-                    w="240px"
-                    py="1"
-                    px="20px"
-                    display={"flex"}
-                    flexDirection={"column"}
-                    alignItems={"center"}
-                    className="ProductContainer"
-                    onClick={() => this.handleOnClick(this.props)}
-                >
-                    <Image mt="3px" mx="auto" w="auto" h="85%" src="../../Books/book.jpg" />
+  return (
+    <Box
+      w="250px"
+      bg="white"
+      borderRadius="5px"
+      boxShadow="base"
+      onClick={() => handleOnClick(id)}
+    >
+      {/* Image box */}
+      <Link
+        to={{
+          pathname: "/BookDetails",
+          state: [{ id: id }],
+        }}
+      >
+        <Box
+          w="100%"
+          h="280px"
+          overflow="hidden"
+          borderRadius="5px 5px 0 0"
+          position="relative"
+          _hover={{ opacity: 0.8 }}
+        >
+          <Image
+            display="block"
+            alt="Image"
+            src="../../Books/badsha.jpg"
+            maxH="100%"
+            w="100%"
+            fit="cover"
+          />
+          <Tag
+            boxShadow='lg'
+            position="absolute"
+            bg='tomato'
+            color='white'
+            top="0"
+            left='0'
+            px="10px"
+            py='3px'
+            mt='15px'
+            borderRadius="0 5px 5px 0"
+            fontWeight='bold'
+            letterSpacing="wide"
+          >
+            <TagLabel className="Bangla">পুরাতন বই</TagLabel>
+          </Tag>
+        </Box>
+      </Link>
 
-                    <Text
-                        h="55px"
-                        className="BookTitle"
-                        textAlign={"center"}
-                        pt="12px"
-                        fontSize={"20px"}
-                    >
-                        {this.props.bookName}
-                    </Text>
-                    <Text pb="2" textAlign="center" fontSize={"14px"}>
-                        New: {this.props.priceNew} Tk / Old: {this.props.priceOld} Tk
-                    </Text>
+      {/* Details box */}
+      <VStack w="100%" pb="15px">
+        <Link
+          to={{
+            pathname: "/BookDetails",
+            state: [{ id: id }],
+          }}
+        >
+          <Text
+            _hover={{ "text-decoration": "underline" }}
+            className="BookTitle"
+            textAlign="center"
+            fontSize="20px"
+            mt="10px"
+          >
+            {bookName}
+          </Text>
+        </Link>
+        <Text textAlign="center" fontSize="16px" fontWeight="bold" color="teal">
+          {`Price: ${priceNew} Tk`}
+        </Text>
+        <Button
+          borderRadius="5px"
+          w="70%"
+          size="sm"
+          _hover={{ "background-color": "tomato", color: "white" }}
+        >
+          Add to Cart
+        </Button>
 
-                    <Flex h="45" w="100%" justifyContent={"center"}>
-                        <Button
-                            h="8"
-                            w="100%"
-                            _hover={{ "background-color": "#1dbf73", color: "white" }}
-                        >
-                            <Text px="2" fontFamily={"Mina"} fontWeight={"medium"}>
-                                View Details
-                            </Text>
-                        </Button>
-                    </Flex>
-                </Box>
-            </Link>
-        )
-    }
-}
+        <Text
+          textAlign="center"
+          fontSize="12px"
+          letterSpacing="widest"
+          pt="10px"
+        >
+          {`More Conditions: ${priceOld} - ${priceNew} Tk`}
+        </Text>
+
+        <Button
+          borderRadius="5px"
+          size="sm"
+          w="80%"
+          colorScheme="teal"
+          _hover={{ "background-color": "teal", color: "white" }}
+        >
+          View Details
+        </Button>
+      </VStack>
+    </Box>
+  );
+};
 
 export default Book;

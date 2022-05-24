@@ -1,6 +1,6 @@
 import React from "react";
 import "../Books/Stylesheet/Books.css";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 import Book from "../../Book/Book";
 import { booksCollection } from "../../../../Redux/actionCreators";
 import { Component } from "react";
@@ -10,14 +10,14 @@ import { connect } from "react-redux";
 const mapDispatchToProps = (dispatch) => {
   return {
     booksCollection: () => dispatch(booksCollection()),
-  }
-}
+  };
+};
 
 const mapStateToProps = (State) => {
   return {
     books: State.booksCollection,
-  }
-}
+  };
+};
 
 class Books extends Component {
   componentDidMount() {
@@ -31,14 +31,14 @@ class Books extends Component {
     // console.log(this.props.books);
 
     popularBooks = this.props.books.filter((item) => {
-      return item.Popularity === 'Popular';
-    })
+      return item.Popularity === "Popular";
+    });
 
     // console.log(popularBooks);
 
-    bookList = popularBooks.map((item) => {
+    bookList = popularBooks.map((item, i) => {
       return (
-        <Box>
+        <div key={i}>
           <Book
             id={item.id}
             key={item.id}
@@ -46,40 +46,39 @@ class Books extends Component {
             priceNew={item.priceNew}
             priceOld={item.priceOld}
           />
-        </Box>
-      )
-    })
+        </div>
+      );
+    });
 
     // console.log(bookList);
 
     return (
-      <Box h="460px" bg="white" boxShadow='md' my='20px' p='10px'>
-          <Heading
-            my="10px"
-            color='text'
-            fontWeight='md'
-            fontSize={{ base: "lg", md: "30" }}
-            textAlign={{ base: "center", md: "left" }}
-            letterSpacing='wider'
-          >
-            {this.props.title}
-          </Heading>
+      <Box bg="white" mt="50px">
+        <Heading
+          mt="20px"
+          mb="40px"
+          color="text"
+          fontWeight="md"
+          fontSize={{ base: "lg", md: "30" }}
+          textAlign={{ base: "center", md: "left" }}
+          letterSpacing="wider"
+        >
+          {this.props.title}
+        </Heading>
 
-          <Flex
-            bg='white'
-            justifyContent={{ base: "center", sm: "space-between" }}
-          >
-            {bookList}
-          </Flex>
+        {/* Show books */}
+        <HStack
+          // bg='red'
+          gap="10"
+        >
+          {bookList}
+        </HStack>
       </Box>
-    )
+    );
   }
 }
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Books);
-
-
 
 // const SimpleSlider = () => {
 //   <Slider dots>

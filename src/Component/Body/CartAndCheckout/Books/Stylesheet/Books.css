@@ -6,7 +6,7 @@
 
 .ProductContainer{
     box-shadow: inset 0 0 3px rgba(29, 191, 115, 0.2);
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .ProductContainer:hover{
