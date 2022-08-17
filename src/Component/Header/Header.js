@@ -12,6 +12,12 @@ import {
   DrawerBody,
   DrawerHeader,
   Tooltip,
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+  AccordionIcon,
+  AccordionText
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { HamburgerIcon, Icon } from "@chakra-ui/icons";
@@ -20,6 +26,8 @@ import { HiOutlineShoppingCart, HiOutlineHeart } from "react-icons/hi";
 import SearchBar from "../Body/Search/SearchBar";
 import MainContainer from "../GeneralComponent/MainContainer";
 import SecondHeader from "./SecondHeader/SecondHeader";
+import { dropdownData, genres } from "../../dev-data";
+import './SecondHeader/style.css';
 
 export default function Header({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -135,8 +143,39 @@ function NavbarText(text, link) {
   );
 }
 
+function AccordionSection(text) {
+  return (
+    <Accordion allowMultiple>
+      <AccordionItem>
+        <h2 >
+          <AccordionButton>
+            <Box flex='1' textAlign='left'>
+              {text}
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+        </h2>
+        <AccordionPanel pb={4}>
+          {
+            dropdownData.map((data) => (
+              <Text
+                cursor='pointer' 
+                color="#363636" 
+                className="dropdown__elem"
+                pb="2"
+              >
+                {data.title}
+              </Text>
+            ))
+          }
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+
 // Company Logo function
-function CompanyLogo() {
+export function CompanyLogo() {
   return (
     <Link to="/">
       {/* <Image
@@ -165,6 +204,11 @@ function HamburgerContent() {
           {NavbarText("My Orders", "/")}
           {NavbarText("Sign In", "/")}
           {NavbarText("My WishList", "/")}
+          {
+            genres.map((genre) => (
+              AccordionSection(genre.title)
+            ))
+          }
         </Stack>
       </DrawerBody>
     </DrawerContent>

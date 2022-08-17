@@ -2,6 +2,11 @@ import React from "react";
 import { Icon } from "@chakra-ui/icons";
 import { Box, Flex, Text, useBoolean } from "@chakra-ui/react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import {
+  UnorderedList
+} from '@chakra-ui/react';
+import { dropdownData, sideElems } from '../../../dev-data';
+import './style.css';
 
 const DropDown = ({ title }) => {
   const [toggle, setToggle] = useBoolean(false);
@@ -26,23 +31,42 @@ const DropDown = ({ title }) => {
       <Box
         display={toggle ? "initial" : "none"}
         boxShadow="md"
-        p="25px"
+        py="15px"
+        px="35px"
         left="10%"
         w="80%"
         position="absolute"
         zIndex="2"
         bg="white"
       >
-        Biographies & Memoirs Arts & Literature Cultural European Historical
-        Leaders & Notable People Shop All Children's Action & Adventure Activity
-        Books Animals Cars & Trucks Classics Shop All Education & Reference
-        Catalogs Colleges Curriculum Dictionaries Education Shop All History
-        African Ancient Asian Black History Canadian Shop All Literature &
-        Fiction Anthologies Classics Contemporary Foreign Language Genre Fiction
-        Shop All Mystery & Suspense Conspiracy Crime Detective Mysteries Spy
-        Shop All Religion & Spirituality Agnosticism Astrology Atheism Buddhism
-        Christian Shop All More Categories Romance Sci-Fi & Fantasy Science &
-        Math Teen & Young Adult Health, Fitness & Dieting Shop All
+        <Flex
+          flexDirection="row"
+          justifyContent="space-between"
+        >
+          <UnorderedList>
+            {
+              dropdownData.map((data) => (
+                <Text 
+                  cursor='pointer' 
+                  color="#363636" 
+                  className="dropdown__elem"
+                  pb="2"
+                >
+                  {data.title}
+                </Text>
+              ))
+            }
+          </UnorderedList>
+          <UnorderedList>
+            {
+              sideElems.map((elem) => (
+                <Text cursor='pointer' color="#319C90">
+                  {elem.title}
+                </Text>
+              ))
+            }
+          </UnorderedList>
+        </Flex>
       </Box>
     </Box>
   );

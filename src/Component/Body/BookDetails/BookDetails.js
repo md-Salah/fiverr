@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Component } from "react";
 import { connect } from "react-redux";
 // import ProductCart from "../CartAndCheckout/ProductCart";
@@ -26,32 +26,15 @@ class BookDetails extends Component {
     }
 
     render() {
-        const { state } = this.props.location;
+        // const { state } = this.props.location;
 
-        const selectedBook = this.props.books.filter((item) => {
-            return item.id === state[0].id;
-        })
-
-        console.log(selectedBook);
+        // const selectedBook = this.props.books.filter((item) => {
+        //     return item.id === state[0].id;
+        // })
 
         return (
-            <Box h="100vh" pt='67px'>
+            <Box pt='67px'>
                 <BookDescription />
-                {/* <BookDetailsTemplate selectedBook={selectedBook} /> */}
-                {/* <Box
-                className="Shadow"
-                mt="50px"
-                mx={{ base: "30px", lg: "60px", xl: "90px" }}
-            >
-                <ProductCart title="Related Books From Previous Order History" />
-            </Box>
-            <Box
-                className="Shadow"
-                mt="50px"
-                mx={{ base: "30px", lg: "60px", xl: "90px" }}
-            >
-                <ProductCart title="Horro Collection" />
-            </Box> */}
             </Box>
 
         );

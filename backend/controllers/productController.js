@@ -11,8 +11,8 @@ exports.createBook = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success: true,
         book,
-    })
-})
+    });
+});
 
 // Get all books
 exports.getAllBooks = catchAsyncErrors(async (req, res, next) => {
@@ -29,8 +29,8 @@ exports.getAllBooks = catchAsyncErrors(async (req, res, next) => {
         success: true,
         books,
         bookCount,
-    })
-})
+    });
+});
 
 // Get Single Book
 exports.getSingleBook = catchAsyncErrors(async (req, res, next) => {
@@ -43,8 +43,8 @@ exports.getSingleBook = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success: true,
         book
-    })
-})
+    });
+});
 
 exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
     const book = await Product.findById(req.params.id);
@@ -57,8 +57,8 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
         success: true,
         book,
         bookCount,
-    })
-})
+    });
+});
 
 
 // Update a book
@@ -79,7 +79,7 @@ exports.updateBook = catchAsyncErrors(async (req, res, next) => {
         success: true,
         book
     })
-})
+});
 
 // delete a book
 exports.deleteBook = catchAsyncErrors(async (req, res, next) => {
@@ -95,6 +95,6 @@ exports.deleteBook = catchAsyncErrors(async (req, res, next) => {
         success: true,
         message: "Product Deleted Successfully"
     })
-})
+});
 
 

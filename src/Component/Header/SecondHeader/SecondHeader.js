@@ -6,7 +6,18 @@ import DropDown from "./DropDown";
 
 const SecondHeader = () => {
   return (
-    <Box bg="white" w="100%" boxShadow="base" h="40px" overflowX={{base: 'auto', lg: 'none'}} css={{ scrollbarWidth:'none' }} >
+    <Box 
+      display={{
+        base: "none",
+        lg: "flex"
+      }}
+      bg="white" 
+      w="100%" 
+      boxShadow="base" 
+      h="40px" 
+      // overflowX={{base: 'auto', lg: 'none'}} 
+      // css={{ scrollbarWidth:'none' }} 
+    >
       <MainContainer>
         <Stack
           direction="row"
