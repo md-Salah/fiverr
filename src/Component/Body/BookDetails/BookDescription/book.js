@@ -7,7 +7,7 @@ export const book = {
     "Translator": "মোতাহের হোসেন চৌধুরী",
     "ISBN": 9841803593,
     "Country": "বাংলাদেশ",
-    "Cover": ['Hardcover', 'Paperback'],
+    "Cover": ['Hardcover', 'Paperback'], 
     "PrintQuality": ['Publisher Print', 'Local Print', 'Premium (Local)'],
     "Condition": ['New', 'Like New', 'Very Good', 'Good', 'Acceptable'],
     "Category": "অনুবাদ: প্রবন্ধ",
