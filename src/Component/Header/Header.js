@@ -67,11 +67,17 @@ export default function Header({ children }) {
             {/* Hamburger Menu end */}
 
             {/* Company Logo */}
-            <Box display={{ base: "none", lg: "initial" }}>{CompanyLogo()}</Box>
+            <Box>
+              {CompanyLogo()}
+            </Box>
             {/* Logo ends here */}
 
             {/* Search Bar starts here */}
-            <SearchBar />
+            <Box display={{ base: "none", md: "block", lg: "block" }}>
+              <SearchBar 
+                size="sm" 
+              />
+            </Box>
             {/* Search Bar ends */}
 
             <Flex alignItems="center" h="inherit">
@@ -120,7 +126,12 @@ export default function Header({ children }) {
           </Flex>
         </MainContainer>
         {/* Sub Header for showing book informations */}
-        <SecondHeader />
+        <SecondHeader/>
+        <Box display={{ base: "block", md: "none", lg: "none" }}>
+          <SearchBar
+            size="sm"
+          />
+        </Box>
       </Box>
       {children}
     </>
@@ -196,7 +207,7 @@ function HamburgerContent() {
     <DrawerContent>
       <DrawerCloseButton />
       <DrawerHeader>
-        <CompanyLogo />
+        {""}
       </DrawerHeader>
       <DrawerBody>
         <Stack direction="column" fontWeight="bold" gap="3">

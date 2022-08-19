@@ -9,6 +9,7 @@ import {
   Flex,
   Button
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const CheckoutItem = () => {
   return (
@@ -26,7 +27,7 @@ const CheckoutItem = () => {
       <Box 
         display={"flex"}
         alignItems={"flex-start"}
-        w={"400px"}
+        w={{ base: "300px", md: "350px", lg: "500px" }}
         borderBottom={"1px solid #ccc"}
         pb={"5"}
       >
@@ -40,24 +41,48 @@ const CheckoutItem = () => {
           display={"flex"}
           flexDirection={"column"}
           alignItems={"flex-start"}
-          w={"60%"}
+          w={"80%"}
         >
           <Stack>
-            <Text 
-              fontWeight={"600"}
-              display={"inline-flex"}
-              className="font_bn"
-              color={"#333333"}
-              fontSize={"large"}
-            >
-              দ্য মিরাকল মর্নিং
-              <Text 
-                color={"GrayText"}
-                ml={"2"}
+            {/* <Box
+              display={"flex"}
+              alignItems={"center"}
+              // w={"300px"}
+            > */}
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                w={"90%"}
+                mr={"5"}
               >
-                × 3
-              </Text>
-            </Text>
+                <Text 
+                  fontWeight={"600"}
+                  display={"flex"}
+                  className="font_bn"
+                  color={"#333333"}
+                  fontSize={"large"}
+                  _hover={{ textColor: "#008080", textDecoration: "underline" }}
+                  flexFlow={"1"}
+                >
+                  <Link to="/BookDetails">
+                    দ্য মিরাকল মর্নিং
+                  </Link>
+                </Text>
+                <Text 
+                  color={"GrayText"}
+                  ml={"2"}
+                >
+                  × 3
+                </Text>
+              </Box>
+              {/* <Select 
+                placeholder='3'
+                size={"sm"}
+              >
+                <option>1</option>
+                <option>2</option>
+              </Select>
+            </Box> */}
             <Flex
               alignItems={"center"}
               justifyContent={"space-between"}
@@ -125,9 +150,6 @@ const CheckoutItem = () => {
           </Stack>
         </Box>
       </Box>
-      <Button colorScheme={"teal"}>
-        আরও বই ক্রয় করুন 
-      </Button>
     </Box>
   )
 }

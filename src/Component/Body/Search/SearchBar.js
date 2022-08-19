@@ -3,7 +3,7 @@ import { Button, Flex } from "@chakra-ui/react";
 import { AutoCompleteInput } from "../../GeneralComponent/AutoCompleteInput";
 import { Link } from "react-router-dom";
 
-export default function SearchBar({ size = "sm" }) {
+export default function SearchBar({ size }) {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (e) => {

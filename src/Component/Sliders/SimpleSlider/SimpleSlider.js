@@ -23,7 +23,7 @@ const SimpleSlider = ({ title }) => {
     //   swipeToSlide: true
     // };
     return (
-      <Box h="500px">
+      <Box h="500px" position={"relative"}>
         <Box 
           display={"flex"} 
           alignItems={"center"}

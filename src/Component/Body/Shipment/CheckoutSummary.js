@@ -1,17 +1,16 @@
 import React from 'react';
 import { 
-  Box, 
-  Stack, 
-  Text,
-  RadioGroup,
-  Radio, 
-  Button,
-  useDisclosure,
-  Input
+    Box,
+    Text,
+    Stack,
+     RadioGroup,
+     Radio,
+     Button,
+     Input
 } from '@chakra-ui/react';
 
-const CheckoutMain = () => {
-  const [value, setValue] = React.useState('1');
+const CheckoutSummary = () => {
+    const [value, setValue] = React.useState('1');
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Box
@@ -23,7 +22,7 @@ const CheckoutMain = () => {
       borderTopColor={"#008080"}
       w={{ base: "100%", md: "80%", lg: "40%" }}
       // mx={{ base: "auto", md: "auto", lg: "none" }}
-      mt={{ base: "7", md: "5", lg: "none" }}
+    //   mt={{ base: "7", md: "5", lg: "none" }}
       textColor={"#333333"}
       className="font_bn"
       fontSize={"large"}
@@ -173,4 +172,4 @@ const CheckoutMain = () => {
   )
 }
 
-export default CheckoutMain
+export default CheckoutSummary

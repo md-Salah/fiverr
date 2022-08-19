@@ -9,6 +9,7 @@ const SecondHeader = () => {
     <Box 
       display={{
         base: "none",
+        md: "block",
         lg: "flex"
       }}
       bg="white" 

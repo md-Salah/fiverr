@@ -6,7 +6,7 @@ import { Flex, Box, Button } from '@chakra-ui/react'
 const Checkout = () => {
   return (
     <Box 
-      w={{base: '95%', lg: '80%'}}
+      w={{base: '90%', lg: '80%'}}
       mx='auto' 
       h='inherit'
       my={{ base: "100px", md: "120px", lg: "150px" }}
@@ -21,6 +21,9 @@ const Checkout = () => {
       <CheckoutItem/>
       <CheckoutItem/>
       <CheckoutItem/>
+      <Button colorScheme={"teal"}>
+        আরও বই ক্রয় করুন 
+      </Button>
       </Box>
       <CheckoutMain/>
     </Box>
