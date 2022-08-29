@@ -90,14 +90,14 @@ export default function Header({ children }) {
                 gap="7"
               >
                 {NavbarText("Home", "/")}
-                {NavbarText("My Orders", "/")}
-                {NavbarText("Sign In", "/")}
+                {NavbarText("My Orders", "/order")}
+                {NavbarText("Sign In", "/auth")}
               </Stack>
               {/* Navigation Links ends */}
 
               {/* My WishList */}
               <Tooltip label="My WishList" bg="teal">
-                <Link to="/">
+                <Link to="/wishlist">
                   <Icon
                     display={{ base: "none", lg: "initial" }}
                     mx="35px"
@@ -128,9 +128,13 @@ export default function Header({ children }) {
         {/* Sub Header for showing book informations */}
         <SecondHeader/>
         <Box display={{ base: "block", md: "none", lg: "none" }}>
-          <SearchBar
-            size="sm"
-          />
+          {/* {
+            isVisible && ( */}
+              <SearchBar
+                size="sm"
+              />
+            {/* )
+          } */}
         </Box>
       </Box>
       {children}

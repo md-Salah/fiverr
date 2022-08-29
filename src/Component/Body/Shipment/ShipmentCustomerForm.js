@@ -9,11 +9,17 @@ import {
     Input,
     InputLeftAddon,
     InputGroup,
-    Textarea
+    Textarea,
+    Flex,
+    Button,
+    PinInput,
+    PinInputField,
+    HStack
 } from '@chakra-ui/react'
 
 const ShipmentCustomerForm = () => {
-    const [value, setValue] = React.useState('1')
+    const [value, setValue] = React.useState('1');
+    const [otpActive, setOtpActive] = React.useState(false);
   return (
     <Box
         border={"1px solid #ccc"}
@@ -21,7 +27,7 @@ const ShipmentCustomerForm = () => {
         boxShadow={"base"}
         // py={"3"}
         backgroundColor={"white"}
-        w={{ base: "100%", md: "100%", lg: "700px" }}
+        w={{ base: "100%", md: "100%", lg: "100%" }}
         mb={"7"}
     >
         <Text
@@ -77,20 +83,42 @@ const ShipmentCustomerForm = () => {
             spacing={3}
         >
             <Input placeholder='Name' />
-            <Box
-                display={"flex"}
-                flexDirection={{ base: "column", md: "row", lg: "row" }}
-            >
-                <InputGroup 
-                    mr={{ base: "none", md: "3", lg: "3" }}
-                    mb={{ base: "3", md: "none", lg: "none" }}
-                >
-                    <InputLeftAddon children='+880' />
-                    <Input 
-                        type='tel' 
-                        placeholder='Phone number'
-                    />
-                </InputGroup>
+            <Box>
+                <Flex>
+                    <InputGroup mr={"4"}>
+                        <InputLeftAddon children='+880' />
+                        <Input 
+                            type='tel' 
+                            placeholder='Phone number'
+                        />
+                    </InputGroup>
+                    <Button
+                        colorScheme={"teal"}
+                        onClick={() => setOtpActive(true)}
+                    >
+                        Send OTP
+                    </Button>
+                </Flex>
+                {
+                    otpActive && (
+                        <Flex py={"4"}>
+                            <HStack mr={"4"}>
+                                <PinInput type='alphanumeric'>
+                                    <PinInputField />
+                                    <PinInputField />
+                                    <PinInputField />
+                                    <PinInputField />
+                                </PinInput>
+                            </HStack>
+                            <Button
+                                colorScheme={"blue"}
+                            >
+                                Apply
+                            </Button>
+                        </Flex>
+                    )
+                }
+            </Box>
                 <InputGroup>
                     <InputLeftAddon children='+880' />
                     <Input
@@ -98,7 +126,6 @@ const ShipmentCustomerForm = () => {
                         placeholder='Alternative Phone number'
                     />
                 </InputGroup>
-            </Box>
             <Box
                 display={"flex"}
             >
@@ -110,13 +137,14 @@ const ShipmentCustomerForm = () => {
                     <option>Chattogram</option>
                     <option>Rajshahi</option>
                 </Select>
-                <Select placeholder='Select Area'>
+                <Select placeholder='Select Thana'>
                     <option>Dhaka</option>
                     <option>Chattogram</option>
                     <option>Rajshahi</option>
                 </Select>
             </Box>
             <Textarea placeholder="Address" />
+            <Textarea placeholder="Additional Notes" />
         </Stack>
     </Box>
   )

@@ -2,7 +2,7 @@ export const book = {
     "url": '/frame.png',
     "title": "book 1",
     "Author": "হুমায়ূন আহমেদ",
-    "Publisher": "বিশ্বসাহিত্য কেন্দ্র",
+    "Publisher": ["বিশ্বসাহিত্য কেন্দ্র", "Prothoma Prokashoni", "Salauddin Boighor", "Projapoti Prokashoni"],
     "Edition": "2nd Editor, 2015",
     "Translator": "মোতাহের হোসেন চৌধুরী",
     "ISBN": 9841803593,

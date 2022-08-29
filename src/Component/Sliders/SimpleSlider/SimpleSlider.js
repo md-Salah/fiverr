@@ -4,7 +4,7 @@ import Book from "../../Body/Book/Book";
 import { allBooks } from "../../../dev-data";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Tooltip } from "@chakra-ui/react";
+import { Box, Text, Tooltip } from "@chakra-ui/react";
 import '../Carousel/Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -31,10 +31,16 @@ const SimpleSlider = ({ title }) => {
           border={'1px solid #ccc'}
           p={"3"}
           boxShadow={"base"}
+          bgColor={"gray.100"}
         >
-          <h4 className="carousel_title">
+          <Text
+            color={"teal"}
+            fontWeight={"semibold"}
+            fontSize={{ base: "xl", md: "2xl", lg: "2xl" }}
+            className="Bangla"
+          >
             {title}
-          </h4>
+          </Text>
             <Box display={"flex"}>
               <Link to="/search" className="mybutton">
                 See All

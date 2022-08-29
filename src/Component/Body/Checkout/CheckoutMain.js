@@ -7,8 +7,11 @@ import {
   Radio, 
   Button,
   useDisclosure,
-  Input
+  Input,
+  HStack
 } from '@chakra-ui/react';
+import DeliverySelectionBox from './DeliverySelectionBox';
+import { Link } from 'react-router-dom';
 
 const CheckoutMain = () => {
   const [value, setValue] = React.useState('1');
@@ -21,12 +24,12 @@ const CheckoutMain = () => {
       boxShadow={"base"}
       backgroundColor={"#FFFFFF"}
       borderTopColor={"#008080"}
-      w={{ base: "100%", md: "80%", lg: "40%" }}
+      w={{ base: "100%", md: "80%", lg: "35%" }}
       // mx={{ base: "auto", md: "auto", lg: "none" }}
       mt={{ base: "7", md: "5", lg: "none" }}
       textColor={"#333333"}
-      className="font_bn"
-      fontSize={"large"}
+      className="Bangla"
+      fontSize={"xl"}
     >
       <Box
         py={"3"}
@@ -81,46 +84,26 @@ const CheckoutMain = () => {
         >
           <Box
             display={"flex"}
+            flexDirection={"column"}
             alignItems={"flex-start"}
             justifyContent={"space-between"}
-            py={"3"}
-            h={"50px"}
+            py={"2"}
+            // h={"80px"}
           >
             <Text>
               শিপিং চার্জ:
             </Text>
-            <RadioGroup onChange={setValue} value={value}>
-              <Stack>
-                <Radio 
-                  value='1'
-                  size={"sm"}
-                >
-                  <Text display={"inline-flex"}>
-                    হোম ডেলিভারি:
-                    <Text ml={"1"}>
-                      45 ৳
-                    </Text>
-                  </Text>
-                </Radio>
-                <Radio 
-                  value='2'
-                  size={"sm"}
-                >
-                  <Text display={"inline-flex"}>
-                    কুরিয়ার:
-                    <Text ml={"1"}>
-                      50 ৳
-                    </Text>
-                  </Text>
-                </Radio>
-              </Stack>
-            </RadioGroup>
+            <HStack >
+              <DeliverySelectionBox/>
+              <DeliverySelectionBox/>
+              <DeliverySelectionBox/>
+
+            </HStack>
           </Box>
           <Box
             display={"flex"}
             alignItems={"center"}
             justifyContent={"space-between"}
-            py={"3"}
           >
             <Text>
               সর্বমোট:
@@ -136,10 +119,14 @@ const CheckoutMain = () => {
         spacing={4}
       >
         <Button
-          colorScheme={"teal"}
           w={"100%"}
+          colorScheme={"teal"}
+          fontSize={"font_bn"}
+          fontWeight={"thin"}
         >
-          অর্ডার সম্পন্ন করুন 
+          <Link to="/shipment">
+            অর্ডার সম্পন্ন করুন 
+          </Link>
         </Button>
         {
           isOpen ? (

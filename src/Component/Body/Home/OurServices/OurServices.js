@@ -16,9 +16,9 @@ import MainContainer from "../../../GeneralComponent/MainContainer";
 
 const OurServices = () => {
   return (
-    <Box my="30px" bg="white">
+    <Box my="40px">
       <MainContainer>
-        <Heading textAlign="center" fontFamily="Nunito" mt="20px">
+        {/* <Heading textAlign="center" fontFamily="Nunito" mt="20px">
           Why Pathok Point!
         </Heading>
         <Text
@@ -32,14 +32,15 @@ const OurServices = () => {
         >
           পুরাতন বইয়ের জগতে দেশজুড়ে পাঠক পয়েন্ট একনাম। <br /> আপনার প্রিয় বইগুলো
           অর্ডার করা যাবে নতুন ও পুরাতন উভয় কন্ডিশনে।
-        </Text>
-        <Box overflowX="auto" css={{scrollbarWidth: 'none'}}>
+        </Text> */}
+        <Box bg="gray.200">
           <Flex
-            justifyContent="space-between"
-            alignItems="baseline"
-            mt="30px"
-            w="800px"
-            mx='auto'
+            flexDirection={"column"}
+            // justifyContent="space-between"
+            // mt="30px"
+            w="100%"
+            px={"4"}
+            // mx='auto'
           >
             {/* Fast Delivery */}
             {Service(
@@ -76,16 +77,29 @@ const OurServices = () => {
 
 function Service(icon, color, title, text) {
   return (
-    <Box my="10px" p="15px" w="350px">
-      <Circle size="40px" bg={color} mx="auto">
-        <Icon color="white" as={icon} />
+    <Box 
+      my="10px" 
+      p="15px" 
+      w={{ base: "100%", md: "50%", lg: "40%" }}
+      display={"flex"}
+      alignItems={"flex-start"}
+    >
+      <Circle size="60px" bg={color}>
+        <Icon color="white" as={icon} fontSize={"lg"} />
       </Circle>
-      <Heading textAlign="center" size="sm" mt="10px" mb="5px">
-        {title}
-      </Heading>
-      <Text textAlign="center" fontWeight="light" color="subHeading">
-        {text}
-      </Text>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"flex-start"}
+        ml={"4"}
+      >
+        <Heading textAlign="center" size="sm" mt="10px" mb="5px">
+          {title}
+        </Heading>
+        <Text fontWeight="light" color="subHeading">
+          {text}
+        </Text>
+      </Box>
     </Box>
   );
 }

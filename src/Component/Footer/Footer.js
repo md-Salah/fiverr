@@ -20,14 +20,12 @@ const Footer = () => {
         flexDirection={{ base: "column", md: "row" }}
         alignItems={"flex-start"}
         justifyContent={{ base: "center", md: "space-evenly" }}
-        // position="absolute"
-        // bottom={"0px"}
         // marginEnd={"0"}
         // left={"0"}
         // right={"0"}
-        py={"5"}
+        pt={"5"}
         px={{ base: "5", md: "none" }}
-        fontFamily={"hind siliguri, Bangla628, sans-serif"}
+        h={"inherit"}
       >
         <Box
           maxW={{ base: "none", md: "26%" }}
@@ -46,6 +44,7 @@ const Footer = () => {
         </Box>
         <Box
           py={{ base: "5", md: "none" }}
+          className="font_bn"
         >
           <Stack spacing={3}>
             <Text 
@@ -70,6 +69,7 @@ const Footer = () => {
         </Box>
         <Box
           py={{ base: "5", md: "none" }}
+          className="font_bn"
         >
           <Stack>
             <Text 

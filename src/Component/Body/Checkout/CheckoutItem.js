@@ -4,26 +4,22 @@ import {
   Text, 
   Image, 
   Stack,
-  IconButton,
   Select,
   Flex,
-  Button
+  Tooltip,
+  SimpleGrid,
+  IconButton
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import {DeleteIcon} from "@chakra-ui/icons";
 
 const CheckoutItem = () => {
   return (
     <Box
       textColor={"#333333"}
+      my={"5"}
+      w={"100%"}
     >
-      <Text 
-        fontWeight={"600"}
-        fontSize={"x-large"}
-        mb={"30px"}
-        className="font_bn"
-      >
-        আপনার শপিং ব্যাগে ৩টি আইটেম আছে
-      </Text>
       <Box 
         display={"flex"}
         alignItems={"flex-start"}
@@ -34,14 +30,14 @@ const CheckoutItem = () => {
         <Image 
           src={"https://ds.rokomari.store/rokomari110/ProductNew20190903/130X186/7fcc71de9_195615.jpg"}
           alt="cart item"
-          w={"30%"}
-          mr={"4"}
+          w={{ base: "35%", md: "30%", lg: "25%" }}
+          mr={"6"}
         />
         <Box
           display={"flex"}
           flexDirection={"column"}
           alignItems={"flex-start"}
-          w={"80%"}
+          w={"100%"}
         >
           <Stack>
             {/* <Box
@@ -52,7 +48,7 @@ const CheckoutItem = () => {
               <Box
                 display={"flex"}
                 alignItems={"center"}
-                w={"90%"}
+                w={"100%"}
                 mr={"5"}
               >
                 <Text 
@@ -75,63 +71,85 @@ const CheckoutItem = () => {
                   × 3
                 </Text>
               </Box>
-              {/* <Select 
-                placeholder='3'
-                size={"sm"}
-              >
-                <option>1</option>
-                <option>2</option>
-              </Select>
-            </Box> */}
-            <Flex
-              alignItems={"center"}
-              justifyContent={"space-between"}
+            <SimpleGrid 
+              columns={2} 
+              columnGap={2} 
+              rowGap={2}
+              w={{ base: "100%", md: "200px", lg: "350px" }}
               fontSize={"sm"}
             >
-              <Text mr={"2"}>
-                Cover:
-              </Text>
-              <Select 
-                placeholder='Hardcover'
-                size={"sm"}
+              <Flex
+                flexDirection={"column"}
               >
-                <option>Paperback</option>
-              </Select>
-            </Flex>
-            <Flex
-              alignItems={"center"}
-              justifyContent={"space-between"}
-              fontSize={"sm"}
-            >
-              <Text mr={"2"}>
-                Quality:
-              </Text>
-              <Select 
-                placeholder='Premium (Local)'
-                size={"sm"}
+                <Text 
+                  fontWeight={"semibold"}
+                >
+                  Cover
+                </Text>
+                <Select 
+                  placeholder='Hardcover'
+                  size={"sm"}
+                >
+                  <option 
+                    fontSize={"sm"}
+                  >
+                    Paperback
+                  </option>
+                </Select>
+              </Flex>
+              <Flex
+                flexDirection={"column"}
+                fontSize={"sm"}
               >
-                <option>Publisher Print</option>
-                <option>Local Print</option>
-              </Select>
-            </Flex>
-            <Flex
-              alignItems={"center"}
-              justifyContent={"space-between"}
-              fontSize={"sm"}
-            >
-              <Text mr={"2"}>
-                Condition:
-              </Text>
-              <Select 
-                placeholder='Good'
-                size={"sm"}
+                <Text 
+                  fontWeight={"semibold"}
+                >
+                  Quality
+                </Text>
+                <Select 
+                  placeholder='Premium (Local)'
+                  size={"sm"}
+                >
+                  <option>Publisher Print</option>
+                  <option>Local Print</option>
+                </Select>
+              </Flex>
+              <Flex
+                flexDirection={"column"}
+                fontSize={"sm"}
               >
-                <option>New</option>
-                <option>Like New</option>
-                <option>Very Good</option>
-                <option>Acceptable</option>
-              </Select>
-            </Flex>
+                <Text 
+                  fontWeight={"semibold"}
+                >
+                  Condition
+                </Text>
+                <Select 
+                  placeholder='Good'
+                  size={"sm"}
+                >
+                  <option>New</option>
+                  <option>Like New</option>
+                  <option>Very Good</option>
+                  <option>Acceptable</option>
+                </Select>
+              </Flex>
+              <Flex
+                flexDirection={"column"}
+                fontSize={"sm"}
+              >
+                <Text 
+                  fontWeight={"semibold"}
+                >
+                  Publisher
+                </Text>
+                <Select 
+                  placeholder='Prothoma Prokashoni'
+                  size={"sm"}
+                >
+                  <option>Salauddin Boighor</option>
+                </Select>
+              </Flex>
+            </SimpleGrid>
             <Text
               fontWeight={"600"}
               display={"inline-flex"}
@@ -149,6 +167,16 @@ const CheckoutItem = () => {
             </Text>
           </Stack>
         </Box>
+        <Tooltip label="Remove">
+          <IconButton
+            colorScheme={"red"}
+            variant={"outline"}
+          >
+            <DeleteIcon 
+              cursor={"pointer"}
+            />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   )

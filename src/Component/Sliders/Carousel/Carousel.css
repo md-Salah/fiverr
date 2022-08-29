@@ -49,10 +49,6 @@
     margin-right: 0.2rem;
   }
   
-  .mybutton:hover {
-    color: #ffffff;
-  }
-  
   .MuiSvgIcon-root {
     cursor: pointer;
   }

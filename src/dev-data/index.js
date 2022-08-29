@@ -263,3 +263,79 @@ export const bannerImages = [
         image: "https://wafilife-media.wafilife.com/uploads/2021/0…-%E0%A6%98%E0%A6%A1%E0%A6%BC%E0%A6%BF_desktop.jpg"
     }
 ]
+
+export const paymentMethods = [
+        {
+            id: 1,
+            title: "Cash On Delivery",
+            image: "https://www.rokomari.com/static/200/images/cod.png"
+        },
+        {
+            id: 2,
+            title: "Nagad",
+            image: "https://www.rokomari.com/static/200/images/Nagad-Logo.png"
+        },
+        {
+            id: 3,
+            title: "Credit Card",
+            image: "https://www.rokomari.com/static/200/images/icon-ssl.png"
+        },
+        {
+            id: 4,
+            title: "Bkash",
+            image: "https://www.rokomari.com/static/200/images/bkash.png"
+        },
+        {
+            id: 5,
+            title: "Rocket",
+            image: "https://www.rokomari.com/static/200/images/rocket.png"
+        }
+    ]
+
+export const publishers = [
+        " পাঞ্জেরী পাবলিকেশন্স",
+        "আল-আমিন প্রকাশন",
+        "আদর্শ",
+        "পিয়ারসন",
+        " চর্চা গ্রন্থ প্রকাশ",
+        "শব্দশৈলী",
+        "রুহামা পাবলিকেশন",
+        "সাফল্য প্রকাশনী",
+        "ইত্যাদি গ্রন্থ প্রকাশ",
+        "বৈশাখী প্রকাশ",
+      ];
+
+export const authors = [
+        "ডেল কার্নেগী",
+        "ডাঃ লুৎফর রহমান",
+        "মোস্তাক আহ্‌মাদ",
+        "নেপোলিয়ন হিল",
+        "ব্রায়ান ট্রেসি",
+        "শিব খেরা",
+        "রবার্ট টি. কিয়োসাকি",
+        "রাজিব আহমেদ",
+        "জোসেফ মারফি",
+        "ড. নরম্যান ভিনসেন্ট পিল",
+      ];
+
+export const formats = [
+        "Hardcover",
+        "Paperback",
+        "Original Print",
+        "Local Print",
+        "Premium Print",
+      ];
+      
+export const conditions = ["New", "Like New", "Very Good", "Good", "Acceptable"];
+      
+export const categories = [
+        "মোটিভেশন",
+        "প্রোগ্রামিং",
+        "ইসলামিক",
+        "ইতিহাস",
+        "মুক্তিযুদ্ধ",
+        "দক্ষতা বৃদ্ধি",
+        "ব্যবসা ও বিনিয়োগ",
+];
+
+export const sortParams = ["Most Popular", "BestSeller", "Title (A to Z)", "Title (Z to A)"];

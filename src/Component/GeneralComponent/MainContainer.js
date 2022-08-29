@@ -3,7 +3,7 @@ import React from 'react'
 
 const MainContainer = ({children}) => {
   return (
-    <Box w={{base: '90%', lg: '85%'}} mx='auto' h='inherit'>
+    <Box w={"100%"} px={{ base: "3%", md: "4%", lg: "5%" }} h='inherit'>
       {children}
     </Box>
   )

@@ -30,7 +30,7 @@ export const ContentBefore = ({ book }) => {
                     h="100%"
                     border={"none"}
                 />
-                <Tag
+                {/* <Tag
                     boxShadow='lg'
                     position="absolute"
                     bg='tomato'
@@ -47,7 +47,7 @@ export const ContentBefore = ({ book }) => {
                 <TagLabel className="Bangla">
                     পুরাতন বই
                 </TagLabel>
-            </Tag>
+            </Tag> */}
             </Box>
             <Stack
                 display={"flex"}
@@ -59,8 +59,7 @@ export const ContentBefore = ({ book }) => {
             >
                 <Link to="/bookDetails">
                     <Text 
-                        className='font_bn'
-                        fontSize={"large"}
+                        className='Bangla'
                         fontWeight={"500"}
                         noOfLines={'2'}
                         _hover={{ 
@@ -68,20 +67,29 @@ export const ContentBefore = ({ book }) => {
                             textDecorationThickness: "1px",
                             color: "teal"
                         }}
-                        h="50px"
+                        h="53px"
                         w="100%"
+                        fontSize="xl"
                     >
                         {book.title}
                     </Text>
                 </Link>
-                <Text
-                    className='font_bn'
-                    py="2"
-                    fontWeight={"500"}
-                    color={"gray.600"}
-                >
-                    {book.author}
-                </Text>
+                <Link to="/Search">
+                    <Text
+                        className='Bangla'
+                        py="2"
+                        fontWeight={"500"}
+                        color={"gray.600"}
+                        _hover={{ 
+                            textDecoration: "underline", 
+                            textDecorationThickness: "0.5px",
+                            color: "teal"
+                        }}
+                        fontSize={"large"}
+                    >
+                        {book.author}
+                    </Text>
+                </Link>
                 <Flex
                     alignItems={"center"}
                 > 

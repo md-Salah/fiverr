@@ -1,41 +1,45 @@
 import React from 'react';
-import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Image } from '@chakra-ui/react';
 import SearchBar from '../../Search/SearchBar';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import MainContainer from '../../../GeneralComponent/MainContainer';
 
 function Banner() {
     return (
         <Box 
-            mt={"5"}
-            position={"relative"}
+            mt={"7%"}
             // display={"inline-block"}
             w={"100%"}
-            h={{ base: "32vh", md: "100vh", lg: "130vh" }}
         >
-            {/* <Box
-                w={"100%"}
-                h={"100%"}
-                position={"absolute"}
-            > */}
-                <Image 
-                    src={"../../../../../../images/cover image.jpg"}
-                    backgroundRepeat={"no-repeat"}
-                    backgroundSize={"cover"}
-                    backgroundPosition={"center"}
-                    filter={"brightness(60%)"}
-                    w={"100%"}
-                h={"100%"}
-                position={"absolute"}
-                />
-            {/* </Box> */}
-            <Box
-                zIndex={"10"}
-                backgroundColor={"yellow"}
-                position={"absolute"}
-                verticalAlign={"center"}
-            >
-                {/* <SearchBar size="lg" /> */}
-                <Text>dnjkasndjkdkjh</Text>
-            </Box>
+            <MainContainer>
+                <Box position='relative'>
+                    <Slider
+                        slidesToShow={1}
+                        slidesToScroll={1}
+                        infinite={true}
+                        autoplay={true}
+                        dots={true}
+                    >
+                        {
+                            [1,2,3].map(() => (
+                                <Image 
+                                    src={"../../../../../../images/cover image.jpg"}
+                                    backgroundRepeat={"no-repeat"}
+                                    backgroundSize={"cover"}
+                                    backgroundPosition={"center"}
+                                    filter={"brightness(60%)"}
+                                    w={"100%"}
+                                    maxH={"500px"}
+                                    // position={"absolute"}
+                                />
+                            ))
+                        }
+                    </Slider>
+
+                </Box>
+            </MainContainer>
         </Box>
     );
 }
